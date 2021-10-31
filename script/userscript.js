@@ -118,38 +118,57 @@ let DrawModel = function () {
     const meshFace = new THREE.Mesh( geometryFace, materialFace );
     meshFace.castShadow = true;
     scene.add( meshFace );
-
+  
   if(flgLeg == 'A'){
-    const geometryLegA = new THREE.BoxGeometry( 50, heightLegH, 50 );
-    const materialLegA = new THREE.MeshPhongMaterial( { color: 0x555555 } );
+  //金属4本脚
+  //
+    //const geometryLegA = new THREE.BoxGeometry( 50, heightLegH, 50 );
+    //const materialLegA = new THREE.MeshPhongMaterial( { color: 0x555555 } );
 
-    const meshLegAFr = new THREE.Mesh( geometryLegA, materialLegA );
-    meshLegAFr.position.x = 560;
-    meshLegAFr.position.z = 310;
-    meshLegAFr.position.y = 375;
-    meshLegAFr.castShadow = true;
-    scene.add( meshLegAFr );
+    //const meshLegAFr = new THREE.Mesh( geometryLegA, materialLegA );
+    //meshLegAFr.position.x = 560;
+    //meshLegAFr.position.z = 310;
+    //meshLegAFr.position.y = 375;
+    //meshLegAFr.castShadow = true;
+    //scene.add( meshLegAFr );
 
-    const meshLegAFl = new THREE.Mesh( geometryLegA, materialLegA );
-    meshLegAFl.position.x = -560;
-    meshLegAFl.position.z = 310;
-    meshLegAFl.position.y = 375;
-    meshLegAFl.castShadow = true;
-    scene.add( meshLegAFl );
+    //const meshLegAFl = new THREE.Mesh( geometryLegA, materialLegA );
+    //meshLegAFl.position.x = -560;
+    //meshLegAFl.position.z = 310;
+    //meshLegAFl.position.y = 375;
+    //meshLegAFl.castShadow = true;
+    //scene.add( meshLegAFl );
 
-    const meshLegABr = new THREE.Mesh( geometryLegA, materialLegA );
-    meshLegABr.position.x = 560;
-    meshLegABr.position.z = -310;
-    meshLegABr.position.y = 375;
-    meshLegABr.castShadow = true;
-    scene.add( meshLegABr );
+    //const meshLegABr = new THREE.Mesh( geometryLegA, materialLegA );
+    //meshLegABr.position.x = 560;
+    //meshLegABr.position.z = -310;
+    //meshLegABr.position.y = 375;
+    //meshLegABr.castShadow = true;
+    //scene.add( meshLegABr );
 
-    const meshLegABl = new THREE.Mesh( geometryLegA, materialLegA );
-    meshLegABl.position.x = -560;
-    meshLegABl.position.z = -310;
-    meshLegABl.position.y = 375;
-    meshLegABl.castShadow = true;
-    scene.add( meshLegABl );
+    //const meshLegABl = new THREE.Mesh( geometryLegA, materialLegA );
+    //meshLegABl.position.x = -560;
+    //meshLegABl.position.z = -310;
+    //meshLegABl.position.y = 375;
+    //meshLegABl.castShadow = true;
+    //scene.add( meshLegABl );
+    let xRange = faceX / 2 - 150;
+    let verticesLegA = [
+      // leg1
+      //top
+      { pos: [], norm: [], uv: []},
+      { pos: [], norm: [], uv: []},
+      { pos: [], norm: [], uv: []},
+      { pos: [], norm: [], uv: []},
+
+      //bottom
+      //right
+      //left
+      //front
+      //back
+    ];
+    
+ 
   }else if(flgLeg == 'B'){
     let xRange = faceX / 2 - 150; 
     let verticesLegB = [
