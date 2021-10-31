@@ -23,6 +23,8 @@ const uvNumComponents = 2;
     let edgeX = faceY * 1.5; // 四方のみ
     let edgeZ = faceY * 1.5; 
 
+    let offsetX = 250;
+
 let DrawModel = function () {
     const canvas = document.querySelector('#three');
     const renderer = new THREE.WebGLRenderer({canvas, antialias: true});
@@ -153,21 +155,80 @@ let DrawModel = function () {
     //meshLegABl.castShadow = true;
     //scene.add( meshLegABl );
     let xRange = faceX / 2 - 150;
+    let gapZ = 600;
+    let legX = 50;
+    let legZ = 50;
     let verticesLegA = [
       // leg1
       //top
+      { pos: [- rangeX / 2 + offsetX       , heightLeg,- gapZ / 2 - legZ], norm: [ 0, 0, 0], uv: [0,1]},
+      { pos: [- rangeX / 2 + offsetX + legX, heightLeg,- gapZ / 2 - legZ], norm: [ 0, 0, 0], uv: [0,1]},
+      { pos: [- rangeX / 2 + offsetX       , heightLeg,- gapZ / 2       ], norm: [ 0, 0, 0], uv: [0,1]},
+      { pos: [], norm: [ 0, 0, 0], uv: [0,1]},
+
+      //bottom
       { pos: [], norm: [], uv: []},
       { pos: [], norm: [], uv: []},
       { pos: [], norm: [], uv: []},
       { pos: [], norm: [], uv: []},
 
-      //bottom
       //right
+      { pos: [], norm: [], uv: []},
+      { pos: [], norm: [], uv: []},
+      { pos: [], norm: [], uv: []},
+      { pos: [], norm: [], uv: []},
+
       //left
+      { pos: [], norm: [], uv: []},
+      { pos: [], norm: [], uv: []},
+      { pos: [], norm: [], uv: []},
+      { pos: [], norm: [], uv: []},
+
       //front
+      { pos: [], norm: [], uv: []},
+      { pos: [], norm: [], uv: []},
+      { pos: [], norm: [], uv: []},
+      { pos: [], norm: [], uv: []},
+
       //back
+      { pos: [], norm: [], uv: []},
+      { pos: [], norm: [], uv: []},
+      { pos: [], norm: [], uv: []},
+      { pos: [], norm: [], uv: []},
     ];
-    
+    var positions = [];
+    var normals = [];
+    var uvs = [];
+    for (var vertex of verticesFace) {
+      positions.push(...vertex.pos);
+      normals.push(...vertex.norm);
+      uvs.push(...vertex.uv);
+    }
+    const geometryFace = new THREE.BufferGeometry();
+
+    geometryFace.setAttribute(
+      'position',
+      new THREE.BufferAttribute(new Float32Array(positions), positionNumComponents));
+    geometryFace.setAttribute(
+      'normal',
+      new THREE.BufferAttribute(new Float32Array(normals), normalNumComponents));
+    geometryFace.setAttribute(
+      'uv',
+      new THREE.BufferAttribute(new Float32Array(uvs), uvNumComponents));
+
+    geometryFace.setIndex([
+         0,   1,   2,   2,   1,   3,
+         4,   5,   6,   6,   5,   7,
+         8,   9,  10,  10,   9,  11,
+        12,  13,  14,  14,  13,  15,
+        16,  17,  18,  18,  17,  19,
+        20,  21,  22,  22,  21,  23,
+    ]);
+
+    const materialLegA = new THREE.MeshPhongMaterial( { color: 0xaaaaaa } );
+    const meshLegA = new THREE.Mesh( geometryLegA, materialLegA );
+    meshLegA.castShadow = true;
+    scene.add( meshLegA );
  
   }else if(flgLeg == 'B'){
     let xRange = faceX / 2 - 150; 
