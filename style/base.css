@@ -1,0 +1,71 @@
+  .tj_wrapper{
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+/* ローディング画面 */
+  #loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 600px;
+    height: 400px;
+    transition: all 1s;
+    background-color: #333;
+  }
+  .loadinfo{
+      position: absolute;
+      width: 100%;
+      line-height: 40px;
+      margin: 180px auto;
+      top: 0;
+      font-size:25px;
+      font-weight: 100;
+      color: #aaa;
+      text-align: center;
+  }
+  .spinner {
+    width: 100px;
+    height: 100px;
+    margin: 150px auto;
+    background-color: #fff;
+    mix-blend-mode: difference;
+    border-radius: 100%;
+    animation: sk-scaleout 1.0s infinite ease-in-out;
+  }
+  .loaded {
+    opacity: 0;
+    visibility: hidden;
+  }
+  /* ローディングアニメーション */
+  @keyframes sk-scaleout {
+    0% {
+      transform: scale(0);
+    } 100% {
+      transform: scale(1.0);
+      opacity: 0;
+    }
+  }
+  .canvas{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+  }
+
+  .controler{
+      position: relative;
+      top: 450px;
+  }
+  
+  button.btn{
+      box-sizing: border-box;
+      padding: 10px 1em;
+      font-size: 1.5em;
+      font-weight: 700;
+      background-color: #ccc;
+      border: solid 2px #aaa;
+      border-radius: 10px;
+      cursor: pointer;
+  }
+

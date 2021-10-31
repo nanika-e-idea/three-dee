@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Three.js test</title>
+        <link rel="stylesheet" href="style/sanitize.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="style/base.css">
+        <link rel="stylesheet" href="style/customize.css">
+    </head>
+    <body>
+        <h1>Three.js test</h1>
+        <div class="tj_wrapper">
+            <div class="canvas">
+                <canvas id="three"></canvas>
+            </div>
+            <div id="loading">
+                <p class="loadinfo">&nbsp;&nbsp;Loading...</p>
+                <div class="spinner"></div>
+            </div>
+        </div>
+        <div class="controler">
+            <button id="toggleLeg" class="btn">脚</button>
+            <button id="heightHigh" class="btn active">High</button>
+            <button id="heightLow" class="btn inactive">Low</button>
+
+            <div class="area" id="page_select_hight_low" style="display:block;">
+              <div class="order01-left font-bold text-22px sp768off" style="color: #364A4D;">STEP1</div>
+              <div class="area_right ac">
+                <label class="text-base w-36 inline-block mb-4 md:mb-0 flex">
+                  サイズを選ぶ
+                  <img class="w-5 ml-3 xl:ml-0 inline-block viewinfo" src="/html/user_data/assets/images/i-q.png" alt="">
+                  <data class="hidden" value="">
+                    <div class="popup_img">
+                      <img class="img" src="/html/user_data/assets/images/popup/image1.png" alt="">
+                    </div>
+                  </data>
+                </label>
+              </div>
+              <div class="ac-hidden" style="overflow: inherit; display: block;">
+                <div class="flex w-full border-t border-gray-e4" id="page_select_hight_low">
+                <div class="order01-left">高さ</div>
+                  <div class="flex w-full" style="margin-left: 30px;">
+                    <label class="c-radioInput select-back height checked" for="hight_h">
+                      <input type="radio" name="hight" id="hight_h" onchange="OnChangeHeight(0);" checked="checked">
+                      ハイテーブル
+                    </label>
+                    <label class="c-radioInput select-back ml-3 height" for="hight_l">
+                      <input type="radio" name="hight" id="hight_l" onchange="OnChangeHeight(1);">
+                      ローテーブル
+                    </label>
+                  </div>
+                </div>
+                <div id="page_select_range_x">
+                  <div class="order01-left">ワイド</div>
+                  <div class="bar-right">
+                    <label class="order" for="">
+                      <input class="ml-5" type="text" id="text_x" value="120" size="4" maxlength="4" onchange="OnChangeTextX();">
+                      <div class="w-full">
+                        <input class="c-rangeInput w-full range-bar" type="range" id="range_x" value="120" min="120" max="240" step="1" oninput="OnChangeRangeX();" onchange="OnChangeRangeX();">
+                        <div class="flex justify-between mt-1 ml-5"><p class="text-11px text-black-2a min_x">120</p><p class="text-11px text-black-2a max_x">240</p></div>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+                <div class="area" id="page_select_range_m" style="display:none;">
+                  <div class="area_left">奥行</div>
+                  <div class="area_right">
+                    <label class="order" for="range85">
+                      <input type="radio" name="range_m" id="range85" value="85cm" onchange="OnChangeRangeM(85);" checked="checked">
+                      85cm
+                    </label>
+                    <label class="order" for="range95">
+                      <input type="radio" name="range_m" id="range95" value="95cm" onchange="OnChangeRangeM(95);">
+                      95cm
+                    </label>
+                  </div>
+                </div>
+                <div id="page_select_range_y" style="display: block;">
+                  <div class="order01-left">奥行</div>
+                  <div class="bar-right">
+                    <label class="order ml-5">
+                      <input class="ml-5" type="text" id="text_y" value="70" size="4" maxlength="4" onchange="OnChangeTextY();">
+                      <div class="w-full">
+                        <input class="c-rangeInput w-full" type="range" id="range_y" value="70" min="70" max="100" step="1" oninput="OnChangeRangeY();" onchange="OnChangeRangeY();">
+                        <div class="flex justify-between mt-1 ml-5"><p class="text-11px text-black-2a min_y">70</p><p class="text-11px text-black-2a max_y">100</p></div>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+                <div class="area  border-b border-gray-e4" id="page_select_thick_m" style="display:none;">
+                  <div class="area_left">厚み</div>
+                  <div class="area_right">
+                    <label class="order" for="thick40_m"><input type="radio" name="thick_m" id="thick40_m" value="40mm" onchange="OnChangeRadioT(40);" checked="checked">40mm</label>
+                  </div>
+                </div>
+                <div class="area" id="page_select_thick_h" style="display: block;">
+                  <div class="order01-left">厚み</div>
+                  <div class="area_right" style="display: inline-block;">
+                    <label class="c-radioInput pl-6" for="thick28_h"><input type="radio" name="thick_h" id="thick28_h" value="28mm" onchange="OnChangeRadioT(28);" checked="checked">28mm<span></span></label>
+                    <label class="c-radioInput pl-6 ml-30" for="thick38_h"><input type="radio" name="thick_h" id="thick38_h" value="38mm" onchange="OnChangeRadioT(38);">38mm<span></span></label>
+                  </div>
+                </div>
+                <div class="area flex" id="page_select_thick_l" style="display:none;">
+                  <div class="order01-left">厚み</div>
+                  <div class="area_right">
+                    <label class="c-radioInput pl-6" for="thick28_l"><input type="radio" name="thick_l" id="thick28_l" value="28mm" onchange="OnChangeRadioT(28);" checked="checked">28mm<span></span></label>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+        <script src="script/three.min.js"></script>
+        <script src="script/OrbitControls.js"></script>
+        <script src="script/BufferGeometryUtils.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="script/userscript.js"></script>
+    </body>
+</html>
