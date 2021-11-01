@@ -22,7 +22,7 @@ let flgEdge = 0;
 let degEdge = 90;
 
 let faceX = 1200;
-let faceY = 　28;
+let faceY = 28;
 let faceZ = 700;
 let heightLeg = heightLegH;
 
@@ -55,8 +55,8 @@ let DrawModel = function () {
 
     let verticesFace = [
       // top
-      { pos: [          faceX / 2, faceY + heightLeg,         -faceZ / 2], norm: [ 0,  1,  0], uv: [0, 0], }, //a 0
-      { pos: [        - faceX / 2, faceY + heightLeg,         -faceZ / 2], norm: [ 0,  1,  0], uv: [1, 0], }, //b 1
+      { pos: [          faceX / 2, faceY + heightLeg,        - faceZ / 2], norm: [ 0,  1,  0], uv: [0, 0], }, //a 0
+      { pos: [        - faceX / 2, faceY + heightLeg,        - faceZ / 2], norm: [ 0,  1,  0], uv: [1, 0], }, //b 1
       { pos: [          faceX / 2, faceY + heightLeg,          faceZ / 2], norm: [ 0,  1,  0], uv: [0, 1], }, //c 2
       { pos: [        - faceX / 2, faceY + heightLeg,          faceZ / 2], norm: [ 0,  1,  0], uv: [1, 1], }, //d 3
 
@@ -75,7 +75,7 @@ let DrawModel = function () {
       // left
       { pos: [  edgeX - faceX / 2,         heightLeg,  edgeZ - faceZ / 2], norm: [-1, -1,  0], uv: [0, 1], }, //h 12
       { pos: [  edgeX - faceX / 2,         heightLeg, -edgeZ + faceZ / 2], norm: [-1, -1,  0], uv: [0, 0], }, //f 13
-      { pos: [        - faceX / 2, faceY + heightLeg,         -faceZ / 2], norm: [-1, -1,  0], uv: [1, 0], }, //b 14
+      { pos: [        - faceX / 2, faceY + heightLeg,        - faceZ / 2], norm: [-1, -1,  0], uv: [1, 0], }, //b 14
       { pos: [        - faceX / 2, faceY + heightLeg,          faceZ / 2], norm: [-1, -1,  0], uv: [1, 1], }, //d 15
       
       // front
@@ -85,10 +85,10 @@ let DrawModel = function () {
       { pos: [        - faceX / 2, faceY + heightLeg,          faceZ / 2], norm: [ 0,  0,  1], uv: [1, 1], }, //f 19
       
       // back
-      { pos: [         faceX / 2, faceY + heightLeg,         -faceZ / 2], norm: [ 0,  0, -1], uv: [0, 0], }, //b 20
-      { pos: [-edgeX + faceX / 2,         heightLeg,  edgeZ - faceZ / 2], norm: [ 0,  0, -1], uv: [0, 1], }, //e 22
-      { pos: [        -faceX / 2, faceY + heightLeg,         -faceZ / 2], norm: [ 0,  0, -1], uv: [1, 0], }, //a 21
-      { pos: [ edgeX - faceX / 2,         heightLeg,  edgeZ - faceZ / 2], norm: [ 0,  0, -1], uv: [1, 1], }, //f 23
+      { pos: [          faceX / 2, faceY + heightLeg,        - faceZ / 2], norm: [ 0,  0, -1], uv: [0, 0], }, //b 20
+      { pos: [- edgeX + faceX / 2,         heightLeg,  edgeZ - faceZ / 2], norm: [ 0,  0, -1], uv: [0, 1], }, //e 22
+      { pos: [        - faceX / 2, faceY + heightLeg,        - faceZ / 2], norm: [ 0,  0, -1], uv: [1, 0], }, //a 21
+      { pos: [  edgeX - faceX / 2,         heightLeg,  edgeZ - faceZ / 2], norm: [ 0,  0, -1], uv: [1, 1], }, //f 23
     ];
 
     var positions = [];
@@ -560,7 +560,27 @@ let DrawModel = function () {
     meshLegB.castShadow = true;
     scene.add( meshLegB );
   }else if(flgLeg == 'M2'){
+    const legX = 70;
+    const legZ = 50;
+
+    const offsetX = 150;
+    const gapTopZ = 300;
+    const gapBottomZ = 600;
+
+    const jointX = 100;
+    const jointZ = 500;
+
+    let outsideX = (faceX + legX) / 2 - offsetX;
+    let  insideX = (faceX - legX) / 2 - offsetX;
+
+    let  inTopZ = gapTopZ / 2;
+    let outTopZ = inTopZ + legZ;
+
+    let  inBottomZ = gapBottomZ /2;
+    let outBottomZ = inBottomZ+ legZ;
+
     let xRange = faceX / 2 - 150; 
+    let outsideX = ()
     let verticesLegC = [
       // side +
       // joint
