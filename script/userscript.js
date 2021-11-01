@@ -344,165 +344,165 @@ let DrawModel = function () {
     let verticesLegB = [
       // side +
       // joint
-      { pos: [ -50 + xRange, heightLegH - 1, -250], norm: [ 0,  -1,  0], uv: [0, 0], }, //0
-      { pos: [  50 + xRange, heightLegH - 1, -250], norm: [ 0,  -1,  0], uv: [1, 0], }, //1
-      { pos: [ -50 + xRange, heightLegH - 1,  250], norm: [ 0,  -1,  0], uv: [0, 1], }, //2
-      { pos: [  50 + xRange, heightLegH - 1,  250], norm: [ 0,  -1,  0], uv: [1, 1], }, //3
+      { pos: [ -50 + xRange, heightLegH - 1, -250], norm: [ 0, -1, 0], uv: [0, 0], }, //0
+      { pos: [  50 + xRange, heightLegH - 1, -250], norm: [ 0, -1, 0], uv: [1, 0], }, //1
+      { pos: [ -50 + xRange, heightLegH - 1,  250], norm: [ 0, -1, 0], uv: [0, 1], }, //2
+      { pos: [  50 + xRange, heightLegH - 1,  250], norm: [ 0, -1, 0], uv: [1, 1], }, //3
       
       // leg-1
       // top
-      { pos: [ -35 + xRange,     heightLegH,  250], norm: [ 0,  1,  0], uv: [0, 0], }, //a 4
-      { pos: [ -35 + xRange,     heightLegH,  300], norm: [ 0,  1,  0], uv: [0, 1], }, //b 5 
-      { pos: [  35 + xRange,     heightLegH,  250], norm: [ 0,  1,  0], uv: [1, 0], }, //c 6
-      { pos: [  35 + xRange,     heightLegH,  300], norm: [ 0,  1,  0], uv: [1, 1], }, //d 7
+      { pos: [ -35 + xRange,     heightLegH,  250], norm: [ 0, 1, 0], uv: [0, 0], }, //a 4
+      { pos: [ -35 + xRange,     heightLegH,  300], norm: [ 0, 1, 0], uv: [0, 1], }, //b 5 
+      { pos: [  35 + xRange,     heightLegH,  250], norm: [ 0, 1, 0], uv: [1, 0], }, //c 6
+      { pos: [  35 + xRange,     heightLegH,  300], norm: [ 0, 1, 0], uv: [1, 1], }, //d 7
       
       // right
-      { pos: [  35 + xRange,     heightLegH,  250], norm: [ 1,  0,  0], uv: [0, 0], }, //c 8
-      { pos: [  35 + xRange,     heightLegH,  300], norm: [ 1,  0,  0], uv: [0, 1], }, //d 9
-      { pos: [  35 + xRange,              0, -250], norm: [ 1,  0,  0], uv: [1, 0], }, //e 10
-      { pos: [  35 + xRange,              0, -200], norm: [ 1,  0,  0], uv: [1, 1], }, //f 11
+      { pos: [  35 + xRange,     heightLegH,  250], norm: [ 1, 0, 0], uv: [0, 0], }, //c 8
+      { pos: [  35 + xRange,     heightLegH,  300], norm: [ 1, 0, 0], uv: [0, 1], }, //d 9
+      { pos: [  35 + xRange,              0, -250], norm: [ 1, 0, 0], uv: [1, 0], }, //e 10
+      { pos: [  35 + xRange,              0, -200], norm: [ 1, 0, 0], uv: [1, 1], }, //f 11
       
       // bottom
-      { pos: [  35 + xRange,              0, -250], norm: [ 0, -1,  0], uv: [0, 0], }, //e 12
-      { pos: [  35 + xRange,              0, -200], norm: [ 0, -1,  0], uv: [0, 1], }, //f 13
-      { pos: [ -35 + xRange,              0, -250], norm: [ 0, -1,  0], uv: [1, 0], }, //g 14
-      { pos: [ -35 + xRange,              0, -200], norm: [ 0, -1,  0], uv: [1, 1], }, //h 15
+      { pos: [  35 + xRange,              0, -250], norm: [ 0,-1, 0], uv: [0, 0], }, //e 12
+      { pos: [  35 + xRange,              0, -200], norm: [ 0,-1, 0], uv: [0, 1], }, //f 13
+      { pos: [ -35 + xRange,              0, -250], norm: [ 0,-1, 0], uv: [1, 0], }, //g 14
+      { pos: [ -35 + xRange,              0, -200], norm: [ 0,-1, 0], uv: [1, 1], }, //h 15
       
       // left
-      { pos: [ -35 + xRange,              0, -250], norm: [-1,  0,  0], uv: [0, 0], }, //g 16
-      { pos: [ -35 + xRange,              0, -200], norm: [-1,  0,  0], uv: [0, 1], }, //h 17
-      { pos: [ -35 + xRange,     heightLegH,  250], norm: [-1,  0,  0], uv: [1, 0], }, //a 18
-      { pos: [ -35 + xRange,     heightLegH,  300], norm: [-1,  0,  0], uv: [1, 1], }, //b 19
+      { pos: [ -35 + xRange,              0, -250], norm: [-1, 0, 0], uv: [0, 0], }, //g 16
+      { pos: [ -35 + xRange,              0, -200], norm: [-1, 0, 0], uv: [0, 1], }, //h 17
+      { pos: [ -35 + xRange,     heightLegH,  250], norm: [-1, 0, 0], uv: [1, 0], }, //a 18
+      { pos: [ -35 + xRange,     heightLegH,  300], norm: [-1, 0, 0], uv: [1, 1], }, //b 19
       
       // front
-      { pos: [  35 + xRange,              0, -200], norm: [ 0,  0,  1], uv: [0, 0], }, //f 20
-      { pos: [  35 + xRange,     heightLegH,  300], norm: [ 0,  0,  1], uv: [0, 1], }, //d 21
-      { pos: [ -35 + xRange,              0, -200], norm: [ 0,  0,  1], uv: [1, 0], }, //h 22
-      { pos: [ -35 + xRange,     heightLegH,  300], norm: [ 0,  0,  1], uv: [1, 1], }, //b 23
+      { pos: [  35 + xRange,              0, -200], norm: [ 0, 0, 1], uv: [0, 0], }, //f 20
+      { pos: [  35 + xRange,     heightLegH,  300], norm: [ 0, 0, 1], uv: [0, 1], }, //d 21
+      { pos: [ -35 + xRange,              0, -200], norm: [ 0, 0, 1], uv: [1, 0], }, //h 22
+      { pos: [ -35 + xRange,     heightLegH,  300], norm: [ 0, 0, 1], uv: [1, 1], }, //b 23
       
       // back
-      { pos: [  35 + xRange,     heightLegH,  250], norm: [ 0,  0, -1], uv: [0, 0], }, //c 24
-      { pos: [  35 + xRange,              0, -250], norm: [ 0,  0, -1], uv: [0, 1], }, //e 25
-      { pos: [ -35 + xRange,     heightLegH,  250], norm: [ 0,  0, -1], uv: [1, 0], }, //a 25
-      { pos: [ -35 + xRange,              0, -250], norm: [ 0,  0, -1], uv: [1, 1], }, //g 27
+      { pos: [  35 + xRange,     heightLegH,  250], norm: [ 0, 0,-1], uv: [0, 0], }, //c 24
+      { pos: [  35 + xRange,              0, -250], norm: [ 0, 0,-1], uv: [0, 1], }, //e 25
+      { pos: [ -35 + xRange,     heightLegH,  250], norm: [ 0, 0,-1], uv: [1, 0], }, //a 25
+      { pos: [ -35 + xRange,              0, -250], norm: [ 0, 0,-1], uv: [1, 1], }, //g 27
     
       // leg-2
       // top
-      { pos: [ -35 + xRange,     heightLegH, -250], norm: [ 0,  1,  0], uv: [0, 0], }, //a 28
-      { pos: [  35 + xRange,     heightLegH, -250], norm: [ 0,  1,  0], uv: [1, 0], }, //b 29
-      { pos: [ -35 + xRange,     heightLegH, -300], norm: [ 0,  1,  0], uv: [0, 1], }, //c 30
-      { pos: [  35 + xRange,     heightLegH, -300], norm: [ 0,  1,  0], uv: [1, 1], }, //d 31
+      { pos: [ -35 + xRange,     heightLegH, -250], norm: [ 0, 1, 0], uv: [0, 0], }, //a 28
+      { pos: [  35 + xRange,     heightLegH, -250], norm: [ 0, 1, 0], uv: [1, 0], }, //b 29
+      { pos: [ -35 + xRange,     heightLegH, -300], norm: [ 0, 1, 0], uv: [0, 1], }, //c 30
+      { pos: [  35 + xRange,     heightLegH, -300], norm: [ 0, 1, 0], uv: [1, 1], }, //d 31
       
       // right
-      { pos: [  35 + xRange,     heightLegH, -250], norm: [ 1,  0,  0], uv: [0, 0], }, //b 32
-      { pos: [  35 + xRange,              0,  250], norm: [ 1,  0,  0], uv: [1, 0], }, //e 33
-      { pos: [  35 + xRange,     heightLegH, -300], norm: [ 1,  0,  0], uv: [0, 1], }, //d 34
-      { pos: [  35 + xRange,              0,  200], norm: [ 1,  0,  0], uv: [1, 1], }, //g 35
+      { pos: [  35 + xRange,     heightLegH, -250], norm: [ 1, 0, 0], uv: [0, 0], }, //b 32
+      { pos: [  35 + xRange,              0,  250], norm: [ 1, 0, 0], uv: [1, 0], }, //e 33
+      { pos: [  35 + xRange,     heightLegH, -300], norm: [ 1, 0, 0], uv: [0, 1], }, //d 34
+      { pos: [  35 + xRange,              0,  200], norm: [ 1, 0, 0], uv: [1, 1], }, //g 35
       
       // bottom
-      { pos: [  35 + xRange,              0,  250], norm: [ 0, -1,  0], uv: [0, 0], }, //e 36
-      { pos: [ -35 + xRange,              0,  250], norm: [ 0, -1,  0], uv: [1, 0], }, //f 37
-      { pos: [  35 + xRange,              0,  200], norm: [ 0, -1,  0], uv: [0, 1], }, //g 38
-      { pos: [ -35 + xRange,              0,  200], norm: [ 0, -1,  0], uv: [1, 1], }, //h 39
+      { pos: [  35 + xRange,              0,  250], norm: [ 0,-1, 0], uv: [0, 0], }, //e 36
+      { pos: [ -35 + xRange,              0,  250], norm: [ 0,-1, 0], uv: [1, 0], }, //f 37
+      { pos: [  35 + xRange,              0,  200], norm: [ 0,-1, 0], uv: [0, 1], }, //g 38
+      { pos: [ -35 + xRange,              0,  200], norm: [ 0,-1, 0], uv: [1, 1], }, //h 39
       
       // left
-      { pos: [ -35 + xRange,              0,  250], norm: [-1,  0,  0], uv: [0, 0], }, //f 40
-      { pos: [ -35 + xRange,     heightLegH, -250], norm: [-1,  0,  0], uv: [1, 0], }, //a 41
-      { pos: [ -35 + xRange,              0,  200], norm: [-1,  0,  0], uv: [0, 1], }, //h 42
-      { pos: [ -35 + xRange,     heightLegH, -300], norm: [-1,  0,  0], uv: [1, 1], }, //c 43
+      { pos: [ -35 + xRange,              0,  250], norm: [-1, 0, 0], uv: [0, 0], }, //f 40
+      { pos: [ -35 + xRange,     heightLegH, -250], norm: [-1, 0, 0], uv: [1, 0], }, //a 41
+      { pos: [ -35 + xRange,              0,  200], norm: [-1, 0, 0], uv: [0, 1], }, //h 42
+      { pos: [ -35 + xRange,     heightLegH, -300], norm: [-1, 0, 0], uv: [1, 1], }, //c 43
       
       // front
-      { pos: [  35 + xRange,              0,  200], norm: [ 0,  1,  0], uv: [0, 0], }, //g 44
-      { pos: [ -35 + xRange,              0,  200], norm: [ 0,  1,  0], uv: [1, 0], }, //h 45
-      { pos: [  35 + xRange,     heightLegH, -300], norm: [ 0,  1,  0], uv: [0, 1], }, //d 46
-      { pos: [ -35 + xRange,     heightLegH, -300], norm: [ 0,  1,  0], uv: [1, 1], }, //c 47
+      { pos: [  35 + xRange,              0,  200], norm: [ 0, 0,-1], uv: [0, 0], }, //g 44
+      { pos: [ -35 + xRange,              0,  200], norm: [ 0, 0,-1], uv: [1, 0], }, //h 45
+      { pos: [  35 + xRange,     heightLegH, -300], norm: [ 0, 0,-1], uv: [0, 1], }, //d 46
+      { pos: [ -35 + xRange,     heightLegH, -300], norm: [ 0, 0,-1], uv: [1, 1], }, //c 47
       
       // back
-      { pos: [  35 + xRange,     heightLegH, -250], norm: [ 0, -1,  0], uv: [0, 0], }, //b 48
-      { pos: [ -35 + xRange,     heightLegH, -250], norm: [ 0, -1,  0], uv: [1, 0], }, //a 49
-      { pos: [  35 + xRange,              0,  250], norm: [ 0, -1,  0], uv: [0, 1], }, //e 50
-      { pos: [ -35 + xRange,              0,  250], norm: [ 0, -1,  0], uv: [1, 1], }, //f 51
+      { pos: [  35 + xRange,     heightLegH, -250], norm: [ 0, 0, 1], uv: [0, 0], }, //b 48
+      { pos: [ -35 + xRange,     heightLegH, -250], norm: [ 0, 0, 1], uv: [1, 0], }, //a 49
+      { pos: [  35 + xRange,              0,  250], norm: [ 0, 0, 1], uv: [0, 1], }, //e 50
+      { pos: [ -35 + xRange,              0,  250], norm: [ 0, 0, 1], uv: [1, 1], }, //f 51
       
       // side -
       // joint
-      { pos: [ -70 - xRange, heightLegH - 1, -300], norm: [ 0, -1,  0], uv: [0, 0], }, //52
-      { pos: [  70 - xRange, heightLegH - 1, -300], norm: [ 0, -1,  0], uv: [1, 0], }, //53
-      { pos: [ -70 - xRange, heightLegH - 1,  300], norm: [ 0, -1,  0], uv: [0, 1], }, //54
-      { pos: [  70 - xRange, heightLegH - 1,  300], norm: [ 0, -1,  0], uv: [1, 1], }, //55
+      { pos: [ -70 - xRange, heightLegH - 1, -300], norm: [ 0,-1, 0], uv: [0, 0], }, //52
+      { pos: [  70 - xRange, heightLegH - 1, -300], norm: [ 0,-1, 0], uv: [1, 0], }, //53
+      { pos: [ -70 - xRange, heightLegH - 1,  300], norm: [ 0,-1, 0], uv: [0, 1], }, //54
+      { pos: [  70 - xRange, heightLegH - 1,  300], norm: [ 0,-1, 0], uv: [1, 1], }, //55
       
       // leg-1
       // top
-      { pos: [ -35 - xRange,     heightLegH,  250], norm: [ 0,  1,  0], uv: [0, 0], }, //a 56
-      { pos: [ -35 - xRange,     heightLegH,  300], norm: [ 0,  1,  0], uv: [0, 1], }, //c 58
-      { pos: [  35 - xRange,     heightLegH,  250], norm: [ 0,  1,  0], uv: [1, 0], }, //b 57
-      { pos: [  35 - xRange,     heightLegH,  300], norm: [ 0,  1,  0], uv: [1, 1], }, //d 59
+      { pos: [ -35 - xRange,     heightLegH,  250], norm: [ 0, 1, 0], uv: [0, 0], }, //a 56
+      { pos: [ -35 - xRange,     heightLegH,  300], norm: [ 0, 1, 0], uv: [0, 1], }, //c 58
+      { pos: [  35 - xRange,     heightLegH,  250], norm: [ 0, 1, 0], uv: [1, 0], }, //b 57
+      { pos: [  35 - xRange,     heightLegH,  300], norm: [ 0, 1, 0], uv: [1, 1], }, //d 59
       
       // right
-      { pos: [  35 - xRange,     heightLegH,  250], norm: [ 1,  0,  0], uv: [0, 0], }, //b 60
-      { pos: [  35 - xRange,     heightLegH,  300], norm: [ 1,  0,  0], uv: [0, 1], }, //d 62
-      { pos: [  35 - xRange,              0, -250], norm: [ 1,  0,  0], uv: [1, 0], }, //e 61
-      { pos: [  35 - xRange,              0, -200], norm: [ 1,  0,  0], uv: [1, 1], }, //g 63
+      { pos: [  35 - xRange,     heightLegH,  250], norm: [ 1, 0, 0], uv: [0, 0], }, //b 60
+      { pos: [  35 - xRange,     heightLegH,  300], norm: [ 1, 0, 0], uv: [0, 1], }, //d 62
+      { pos: [  35 - xRange,              0, -250], norm: [ 1, 0, 0], uv: [1, 0], }, //e 61
+      { pos: [  35 - xRange,              0, -200], norm: [ 1, 0, 0], uv: [1, 1], }, //g 63
       
       // bottom
-      { pos: [  35 - xRange,              0, -250], norm: [ 0, -1,  0], uv: [0, 0], }, //e 64
-      { pos: [  35 - xRange,              0, -200], norm: [ 0, -1,  0], uv: [0, 1], }, //g 66
-      { pos: [ -35 - xRange,              0, -250], norm: [ 0, -1,  0], uv: [1, 0], }, //f 65
-      { pos: [ -35 - xRange,              0, -200], norm: [ 0, -1,  0], uv: [1, 1], }, //h 67
+      { pos: [  35 - xRange,              0, -250], norm: [ 0,-1, 0], uv: [0, 0], }, //e 64
+      { pos: [  35 - xRange,              0, -200], norm: [ 0,-1, 0], uv: [0, 1], }, //g 66
+      { pos: [ -35 - xRange,              0, -250], norm: [ 0,-1, 0], uv: [1, 0], }, //f 65
+      { pos: [ -35 - xRange,              0, -200], norm: [ 0,-1, 0], uv: [1, 1], }, //h 67
       
       // left
-      { pos: [ -35 - xRange,              0, -250], norm: [-1,  0,  0], uv: [0, 0], }, //f 68
-      { pos: [ -35 - xRange,              0, -200], norm: [-1,  0,  0], uv: [0, 1], }, //h 70
-      { pos: [ -35 - xRange,     heightLegH,  250], norm: [-1,  0,  0], uv: [1, 0], }, //a 89
-      { pos: [ -35 - xRange,     heightLegH,  300], norm: [-1,  0,  0], uv: [1, 1], }, //c 71
+      { pos: [ -35 - xRange,              0, -250], norm: [-1, 0, 0], uv: [0, 0], }, //f 68
+      { pos: [ -35 - xRange,              0, -200], norm: [-1, 0, 0], uv: [0, 1], }, //h 70
+      { pos: [ -35 - xRange,     heightLegH,  250], norm: [-1, 0, 0], uv: [1, 0], }, //a 89
+      { pos: [ -35 - xRange,     heightLegH,  300], norm: [-1, 0, 0], uv: [1, 1], }, //c 71
       
       // front
-      { pos: [  35 - xRange,              0, -200], norm: [ 0,  0,  1], uv: [0, 0], }, //g 72
-      { pos: [  35 - xRange,     heightLegH,  300], norm: [ 0,  0,  1], uv: [0, 1], }, //d 74
-      { pos: [ -35 - xRange,              0, -200], norm: [ 0,  0,  1], uv: [1, 0], }, //h 73
-      { pos: [ -35 - xRange,     heightLegH,  300], norm: [ 0,  0,  1], uv: [1, 1], }, //c 75
+      { pos: [  35 - xRange,              0, -200], norm: [ 0, 0, 1], uv: [0, 0], }, //g 72
+      { pos: [  35 - xRange,     heightLegH,  300], norm: [ 0, 0, 1], uv: [0, 1], }, //d 74
+      { pos: [ -35 - xRange,              0, -200], norm: [ 0, 0, 1], uv: [1, 0], }, //h 73
+      { pos: [ -35 - xRange,     heightLegH,  300], norm: [ 0, 0, 1], uv: [1, 1], }, //c 75
       
       // back
-      { pos: [  35 - xRange,     heightLegH,  250], norm: [ 0,  0, -1], uv: [0, 0], }, //b 76
-      { pos: [  35 - xRange,              0, -250], norm: [ 0,  0, -1], uv: [0, 1], }, //e 78
-      { pos: [ -35 - xRange,     heightLegH,  250], norm: [ 0,  0, -1], uv: [1, 0], }, //a 77
-      { pos: [ -35 - xRange,              0, -250], norm: [ 0,  0, -1], uv: [1, 1], }, //f 79
+      { pos: [  35 - xRange,     heightLegH,  250], norm: [ 0, 0,-1], uv: [0, 0], }, //b 76
+      { pos: [  35 - xRange,              0, -250], norm: [ 0, 0,-1], uv: [0, 1], }, //e 78
+      { pos: [ -35 - xRange,     heightLegH,  250], norm: [ 0, 0,-1], uv: [1, 0], }, //a 77
+      { pos: [ -35 - xRange,              0, -250], norm: [ 0, 0,-1], uv: [1, 1], }, //f 79
       
       // leg-2
       // top
-      { pos: [ -35 - xRange,     heightLegH, -250], norm: [ 0,  1,  0], uv: [0, 0], }, //a 80
-      { pos: [  35 - xRange,     heightLegH, -250], norm: [ 0,  1,  0], uv: [1, 0], }, //b 81
-      { pos: [ -35 - xRange,     heightLegH, -300], norm: [ 0,  1,  0], uv: [0, 1], }, //c 82
-      { pos: [  35 - xRange,     heightLegH, -300], norm: [ 0,  1,  0], uv: [1, 1], }, //d 83
+      { pos: [ -35 - xRange,     heightLegH, -250], norm: [ 0, 1, 0], uv: [0, 0], }, //a 80
+      { pos: [  35 - xRange,     heightLegH, -250], norm: [ 0, 1, 0], uv: [1, 0], }, //b 81
+      { pos: [ -35 - xRange,     heightLegH, -300], norm: [ 0, 1, 0], uv: [0, 1], }, //c 82
+      { pos: [  35 - xRange,     heightLegH, -300], norm: [ 0, 1, 0], uv: [1, 1], }, //d 83
       
       // right
-      { pos: [  35 - xRange,     heightLegH, -250], norm: [ 1,  0,  0], uv: [0, 0], }, //b 84
-      { pos: [  35 - xRange,              0,  250], norm: [ 1,  0,  0], uv: [1, 0], }, //e 85
-      { pos: [  35 - xRange,     heightLegH, -300], norm: [ 1,  0,  0], uv: [0, 1], }, //d 86
-      { pos: [  35 - xRange,              0,  200], norm: [ 1,  0,  0], uv: [1, 1], }, //g 87
+      { pos: [  35 - xRange,     heightLegH, -250], norm: [ 1, 0, 0], uv: [0, 0], }, //b 84
+      { pos: [  35 - xRange,              0,  250], norm: [ 1, 0, 0], uv: [1, 0], }, //e 85
+      { pos: [  35 - xRange,     heightLegH, -300], norm: [ 1, 0, 0], uv: [0, 1], }, //d 86
+      { pos: [  35 - xRange,              0,  200], norm: [ 1, 0, 0], uv: [1, 1], }, //g 87
       
       // bottom
-      { pos: [  35 - xRange,              0,  250], norm: [ 0, -1,  0], uv: [0, 0], }, //e 88
-      { pos: [ -35 - xRange,              0,  250], norm: [ 0, -1,  0], uv: [1, 0], }, //f 89
-      { pos: [  35 - xRange,              0,  200], norm: [ 0, -1,  0], uv: [0, 1], }, //g 90
-      { pos: [ -35 - xRange,              0,  200], norm: [ 0, -1,  0], uv: [1, 1], }, //h 91
+      { pos: [  35 - xRange,              0,  250], norm: [ 0,-1, 0], uv: [0, 0], }, //e 88
+      { pos: [ -35 - xRange,              0,  250], norm: [ 0,-1, 0], uv: [1, 0], }, //f 89
+      { pos: [  35 - xRange,              0,  200], norm: [ 0,-1, 0], uv: [0, 1], }, //g 90
+      { pos: [ -35 - xRange,              0,  200], norm: [ 0,-1, 0], uv: [1, 1], }, //h 91
       
       // left
-      { pos: [ -35 - xRange,              0,  250], norm: [-1,  0,  0], uv: [0, 0], }, //f 92
-      { pos: [ -35 - xRange,     heightLegH, -250], norm: [-1,  0,  0], uv: [1, 0], }, //a 93
-      { pos: [ -35 - xRange,              0,  200], norm: [-1,  0,  0], uv: [0, 1], }, //h 94
-      { pos: [ -35 - xRange,     heightLegH, -300], norm: [-1,  0,  0], uv: [1, 1], }, //c 95
+      { pos: [ -35 - xRange,              0,  250], norm: [-1, 0, 0], uv: [0, 0], }, //f 92
+      { pos: [ -35 - xRange,     heightLegH, -250], norm: [-1, 0, 0], uv: [1, 0], }, //a 93
+      { pos: [ -35 - xRange,              0,  200], norm: [-1, 0, 0], uv: [0, 1], }, //h 94
+      { pos: [ -35 - xRange,     heightLegH, -300], norm: [-1, 0, 0], uv: [1, 1], }, //c 95
       
       // front
-      { pos: [  35 - xRange,              0,  200], norm: [ 0,  0,  1], uv: [0, 0], }, //g 96
-      { pos: [ -35 - xRange,              0,  200], norm: [ 0,  0,  1], uv: [1, 0], }, //h 97
-      { pos: [  35 - xRange,     heightLegH, -300], norm: [ 0,  0,  1], uv: [0, 1], }, //d 98
-      { pos: [ -35 - xRange,     heightLegH, -300], norm: [ 0,  0,  1], uv: [1, 1], }, //c 99
+      { pos: [  35 - xRange,              0,  200], norm: [ 0, 0,-1], uv: [0, 0], }, //g 96
+      { pos: [ -35 - xRange,              0,  200], norm: [ 0, 0,-1], uv: [1, 0], }, //h 97
+      { pos: [  35 - xRange,     heightLegH, -300], norm: [ 0, 0,-1], uv: [0, 1], }, //d 98
+      { pos: [ -35 - xRange,     heightLegH, -300], norm: [ 0, 0,-1], uv: [1, 1], }, //c 99
       
       // back
-      { pos: [  35 - xRange,     heightLegH, -250], norm: [ 0,  0, -1], uv: [0, 0], }, //b 100
-      { pos: [ -35 - xRange,     heightLegH, -250], norm: [ 0,  0, -1], uv: [1, 0], }, //a 101
-      { pos: [  35 - xRange,              0,  250], norm: [ 0,  0, -1], uv: [0, 1], }, //e 102
-      { pos: [ -35 - xRange,              0,  250], norm: [ 0,  0, -1], uv: [1, 1], }, //f 103
+      { pos: [  35 - xRange,     heightLegH, -250], norm: [ 0, 0, 1], uv: [0, 0], }, //b 100
+      { pos: [ -35 - xRange,     heightLegH, -250], norm: [ 0, 0, 1], uv: [1, 0], }, //a 101
+      { pos: [  35 - xRange,              0,  250], norm: [ 0, 0, 1], uv: [0, 1], }, //e 102
+      { pos: [ -35 - xRange,              0,  250], norm: [ 0, 0, 1], uv: [1, 1], }, //f 103
     ];
 
     var positions = [];
