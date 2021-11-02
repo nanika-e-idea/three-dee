@@ -2,7 +2,7 @@ const width = 600;
 const height = 400;
 const fov = 60;
 const aspect = width / height;
-const near = 1;
+const near = 100;
 const far = 100000;
 
 const heightLegH = 750;
@@ -339,226 +339,6 @@ let DrawModel = function () {
     meshLeg.castShadow = true;
     scene.add( meshLeg );
  
-  }else if(flgLeg == 'MX'){
-    let xRange = faceX / 2 - 150; 
-    let verticesLegB = [
-      // side +
-      // joint
-      { pos: [ -50 + xRange, heightLegH - 1, -250], norm: [ 0, -1, 0], uv: [0, 0], }, //0
-      { pos: [  50 + xRange, heightLegH - 1, -250], norm: [ 0, -1, 0], uv: [1, 0], }, //1
-      { pos: [ -50 + xRange, heightLegH - 1,  250], norm: [ 0, -1, 0], uv: [0, 1], }, //2
-      { pos: [  50 + xRange, heightLegH - 1,  250], norm: [ 0, -1, 0], uv: [1, 1], }, //3
-      
-      // leg-1
-      // top
-      { pos: [ -35 + xRange,     heightLegH,  250], norm: [ 0, 1, 0], uv: [0, 0], }, //a 4
-      { pos: [ -35 + xRange,     heightLegH,  300], norm: [ 0, 1, 0], uv: [0, 1], }, //b 5 
-      { pos: [  35 + xRange,     heightLegH,  250], norm: [ 0, 1, 0], uv: [1, 0], }, //c 6
-      { pos: [  35 + xRange,     heightLegH,  300], norm: [ 0, 1, 0], uv: [1, 1], }, //d 7
-      
-      // right
-      { pos: [  35 + xRange,     heightLegH,  250], norm: [ 1, 0, 0], uv: [0, 0], }, //c 8
-      { pos: [  35 + xRange,     heightLegH,  300], norm: [ 1, 0, 0], uv: [0, 1], }, //d 9
-      { pos: [  35 + xRange,              0, -250], norm: [ 1, 0, 0], uv: [1, 0], }, //e 10
-      { pos: [  35 + xRange,              0, -200], norm: [ 1, 0, 0], uv: [1, 1], }, //f 11
-      
-      // bottom
-      { pos: [  35 + xRange,              0, -250], norm: [ 0,-1, 0], uv: [0, 0], }, //e 12
-      { pos: [  35 + xRange,              0, -200], norm: [ 0,-1, 0], uv: [0, 1], }, //f 13
-      { pos: [ -35 + xRange,              0, -250], norm: [ 0,-1, 0], uv: [1, 0], }, //g 14
-      { pos: [ -35 + xRange,              0, -200], norm: [ 0,-1, 0], uv: [1, 1], }, //h 15
-      
-      // left
-      { pos: [ -35 + xRange,              0, -250], norm: [-1, 0, 0], uv: [0, 0], }, //g 16
-      { pos: [ -35 + xRange,              0, -200], norm: [-1, 0, 0], uv: [0, 1], }, //h 17
-      { pos: [ -35 + xRange,     heightLegH,  250], norm: [-1, 0, 0], uv: [1, 0], }, //a 18
-      { pos: [ -35 + xRange,     heightLegH,  300], norm: [-1, 0, 0], uv: [1, 1], }, //b 19
-      
-      // front
-      { pos: [  35 + xRange,              0, -200], norm: [ 0, 0, 1], uv: [0, 0], }, //f 20
-      { pos: [  35 + xRange,     heightLegH,  300], norm: [ 0, 0, 1], uv: [0, 1], }, //d 21
-      { pos: [ -35 + xRange,              0, -200], norm: [ 0, 0, 1], uv: [1, 0], }, //h 22
-      { pos: [ -35 + xRange,     heightLegH,  300], norm: [ 0, 0, 1], uv: [1, 1], }, //b 23
-      
-      // back
-      { pos: [  35 + xRange,     heightLegH,  250], norm: [ 0, 0,-1], uv: [0, 0], }, //c 24
-      { pos: [  35 + xRange,              0, -250], norm: [ 0, 0,-1], uv: [0, 1], }, //e 25
-      { pos: [ -35 + xRange,     heightLegH,  250], norm: [ 0, 0,-1], uv: [1, 0], }, //a 25
-      { pos: [ -35 + xRange,              0, -250], norm: [ 0, 0,-1], uv: [1, 1], }, //g 27
-    
-      // leg-2
-      // top
-      { pos: [ -35 + xRange,     heightLegH, -250], norm: [ 0, 1, 0], uv: [0, 0], }, //a 28
-      { pos: [  35 + xRange,     heightLegH, -250], norm: [ 0, 1, 0], uv: [1, 0], }, //b 29
-      { pos: [ -35 + xRange,     heightLegH, -300], norm: [ 0, 1, 0], uv: [0, 1], }, //c 30
-      { pos: [  35 + xRange,     heightLegH, -300], norm: [ 0, 1, 0], uv: [1, 1], }, //d 31
-      
-      // right
-      { pos: [  35 + xRange,     heightLegH, -250], norm: [ 1, 0, 0], uv: [0, 0], }, //b 32
-      { pos: [  35 + xRange,              0,  250], norm: [ 1, 0, 0], uv: [1, 0], }, //e 33
-      { pos: [  35 + xRange,     heightLegH, -300], norm: [ 1, 0, 0], uv: [0, 1], }, //d 34
-      { pos: [  35 + xRange,              0,  200], norm: [ 1, 0, 0], uv: [1, 1], }, //g 35
-      
-      // bottom
-      { pos: [  35 + xRange,              0,  250], norm: [ 0,-1, 0], uv: [0, 0], }, //e 36
-      { pos: [ -35 + xRange,              0,  250], norm: [ 0,-1, 0], uv: [1, 0], }, //f 37
-      { pos: [  35 + xRange,              0,  200], norm: [ 0,-1, 0], uv: [0, 1], }, //g 38
-      { pos: [ -35 + xRange,              0,  200], norm: [ 0,-1, 0], uv: [1, 1], }, //h 39
-      
-      // left
-      { pos: [ -35 + xRange,              0,  250], norm: [-1, 0, 0], uv: [0, 0], }, //f 40
-      { pos: [ -35 + xRange,     heightLegH, -250], norm: [-1, 0, 0], uv: [1, 0], }, //a 41
-      { pos: [ -35 + xRange,              0,  200], norm: [-1, 0, 0], uv: [0, 1], }, //h 42
-      { pos: [ -35 + xRange,     heightLegH, -300], norm: [-1, 0, 0], uv: [1, 1], }, //c 43
-      
-      // front
-      { pos: [  35 + xRange,              0,  200], norm: [ 0, 0,-1], uv: [0, 0], }, //g 44
-      { pos: [ -35 + xRange,              0,  200], norm: [ 0, 0,-1], uv: [1, 0], }, //h 45
-      { pos: [  35 + xRange,     heightLegH, -300], norm: [ 0, 0,-1], uv: [0, 1], }, //d 46
-      { pos: [ -35 + xRange,     heightLegH, -300], norm: [ 0, 0,-1], uv: [1, 1], }, //c 47
-      
-      // back
-      { pos: [  35 + xRange,     heightLegH, -250], norm: [ 0, 0, 1], uv: [0, 0], }, //b 48
-      { pos: [ -35 + xRange,     heightLegH, -250], norm: [ 0, 0, 1], uv: [1, 0], }, //a 49
-      { pos: [  35 + xRange,              0,  250], norm: [ 0, 0, 1], uv: [0, 1], }, //e 50
-      { pos: [ -35 + xRange,              0,  250], norm: [ 0, 0, 1], uv: [1, 1], }, //f 51
-      
-      // side -
-      // joint
-      { pos: [ -70 - xRange, heightLegH - 1, -300], norm: [ 0,-1, 0], uv: [0, 0], }, //52
-      { pos: [  70 - xRange, heightLegH - 1, -300], norm: [ 0,-1, 0], uv: [1, 0], }, //53
-      { pos: [ -70 - xRange, heightLegH - 1,  300], norm: [ 0,-1, 0], uv: [0, 1], }, //54
-      { pos: [  70 - xRange, heightLegH - 1,  300], norm: [ 0,-1, 0], uv: [1, 1], }, //55
-      
-      // leg-1
-      // top
-      { pos: [ -35 - xRange,     heightLegH,  250], norm: [ 0, 1, 0], uv: [0, 0], }, //a 56
-      { pos: [ -35 - xRange,     heightLegH,  300], norm: [ 0, 1, 0], uv: [0, 1], }, //c 58
-      { pos: [  35 - xRange,     heightLegH,  250], norm: [ 0, 1, 0], uv: [1, 0], }, //b 57
-      { pos: [  35 - xRange,     heightLegH,  300], norm: [ 0, 1, 0], uv: [1, 1], }, //d 59
-      
-      // right
-      { pos: [  35 - xRange,     heightLegH,  250], norm: [ 1, 0, 0], uv: [0, 0], }, //b 60
-      { pos: [  35 - xRange,     heightLegH,  300], norm: [ 1, 0, 0], uv: [0, 1], }, //d 62
-      { pos: [  35 - xRange,              0, -250], norm: [ 1, 0, 0], uv: [1, 0], }, //e 61
-      { pos: [  35 - xRange,              0, -200], norm: [ 1, 0, 0], uv: [1, 1], }, //g 63
-      
-      // bottom
-      { pos: [  35 - xRange,              0, -250], norm: [ 0,-1, 0], uv: [0, 0], }, //e 64
-      { pos: [  35 - xRange,              0, -200], norm: [ 0,-1, 0], uv: [0, 1], }, //g 66
-      { pos: [ -35 - xRange,              0, -250], norm: [ 0,-1, 0], uv: [1, 0], }, //f 65
-      { pos: [ -35 - xRange,              0, -200], norm: [ 0,-1, 0], uv: [1, 1], }, //h 67
-      
-      // left
-      { pos: [ -35 - xRange,              0, -250], norm: [-1, 0, 0], uv: [0, 0], }, //f 68
-      { pos: [ -35 - xRange,              0, -200], norm: [-1, 0, 0], uv: [0, 1], }, //h 70
-      { pos: [ -35 - xRange,     heightLegH,  250], norm: [-1, 0, 0], uv: [1, 0], }, //a 89
-      { pos: [ -35 - xRange,     heightLegH,  300], norm: [-1, 0, 0], uv: [1, 1], }, //c 71
-      
-      // front
-      { pos: [  35 - xRange,              0, -200], norm: [ 0, 0, 1], uv: [0, 0], }, //g 72
-      { pos: [  35 - xRange,     heightLegH,  300], norm: [ 0, 0, 1], uv: [0, 1], }, //d 74
-      { pos: [ -35 - xRange,              0, -200], norm: [ 0, 0, 1], uv: [1, 0], }, //h 73
-      { pos: [ -35 - xRange,     heightLegH,  300], norm: [ 0, 0, 1], uv: [1, 1], }, //c 75
-      
-      // back
-      { pos: [  35 - xRange,     heightLegH,  250], norm: [ 0, 0,-1], uv: [0, 0], }, //b 76
-      { pos: [  35 - xRange,              0, -250], norm: [ 0, 0,-1], uv: [0, 1], }, //e 78
-      { pos: [ -35 - xRange,     heightLegH,  250], norm: [ 0, 0,-1], uv: [1, 0], }, //a 77
-      { pos: [ -35 - xRange,              0, -250], norm: [ 0, 0,-1], uv: [1, 1], }, //f 79
-      
-      // leg-2
-      // top
-      { pos: [ -35 - xRange,     heightLegH, -250], norm: [ 0, 1, 0], uv: [0, 0], }, //a 80
-      { pos: [  35 - xRange,     heightLegH, -250], norm: [ 0, 1, 0], uv: [1, 0], }, //b 81
-      { pos: [ -35 - xRange,     heightLegH, -300], norm: [ 0, 1, 0], uv: [0, 1], }, //c 82
-      { pos: [  35 - xRange,     heightLegH, -300], norm: [ 0, 1, 0], uv: [1, 1], }, //d 83
-      
-      // right
-      { pos: [  35 - xRange,     heightLegH, -250], norm: [ 1, 0, 0], uv: [0, 0], }, //b 84
-      { pos: [  35 - xRange,              0,  250], norm: [ 1, 0, 0], uv: [1, 0], }, //e 85
-      { pos: [  35 - xRange,     heightLegH, -300], norm: [ 1, 0, 0], uv: [0, 1], }, //d 86
-      { pos: [  35 - xRange,              0,  200], norm: [ 1, 0, 0], uv: [1, 1], }, //g 87
-      
-      // bottom
-      { pos: [  35 - xRange,              0,  250], norm: [ 0,-1, 0], uv: [0, 0], }, //e 88
-      { pos: [ -35 - xRange,              0,  250], norm: [ 0,-1, 0], uv: [1, 0], }, //f 89
-      { pos: [  35 - xRange,              0,  200], norm: [ 0,-1, 0], uv: [0, 1], }, //g 90
-      { pos: [ -35 - xRange,              0,  200], norm: [ 0,-1, 0], uv: [1, 1], }, //h 91
-      
-      // left
-      { pos: [ -35 - xRange,              0,  250], norm: [-1, 0, 0], uv: [0, 0], }, //f 92
-      { pos: [ -35 - xRange,     heightLegH, -250], norm: [-1, 0, 0], uv: [1, 0], }, //a 93
-      { pos: [ -35 - xRange,              0,  200], norm: [-1, 0, 0], uv: [0, 1], }, //h 94
-      { pos: [ -35 - xRange,     heightLegH, -300], norm: [-1, 0, 0], uv: [1, 1], }, //c 95
-      
-      // front
-      { pos: [  35 - xRange,              0,  200], norm: [ 0, 0,-1], uv: [0, 0], }, //g 96
-      { pos: [ -35 - xRange,              0,  200], norm: [ 0, 0,-1], uv: [1, 0], }, //h 97
-      { pos: [  35 - xRange,     heightLegH, -300], norm: [ 0, 0,-1], uv: [0, 1], }, //d 98
-      { pos: [ -35 - xRange,     heightLegH, -300], norm: [ 0, 0,-1], uv: [1, 1], }, //c 99
-      
-      // back
-      { pos: [  35 - xRange,     heightLegH, -250], norm: [ 0, 0, 1], uv: [0, 0], }, //b 100
-      { pos: [ -35 - xRange,     heightLegH, -250], norm: [ 0, 0, 1], uv: [1, 0], }, //a 101
-      { pos: [  35 - xRange,              0,  250], norm: [ 0, 0, 1], uv: [0, 1], }, //e 102
-      { pos: [ -35 - xRange,              0,  250], norm: [ 0, 0, 1], uv: [1, 1], }, //f 103
-    ];
-
-    var positions = [];
-    var normals = [];
-    var uvs = [];
-    for (var vertex of verticesLegB) {
-      positions.push(...vertex.pos);
-      normals.push(...vertex.norm);
-      uvs.push(...vertex.uv);
-    }
-    const geometryLegB = new THREE.BufferGeometry();
-
-    geometryLegB.setAttribute(
-      'position',
-      new THREE.BufferAttribute(new Float32Array(positions), positionNumComponents));
-    geometryLegB.setAttribute(
-      'normal',
-      new THREE.BufferAttribute(new Float32Array(normals), normalNumComponents));
-    geometryLegB.setAttribute(
-      'uv',
-      new THREE.BufferAttribute(new Float32Array(uvs), uvNumComponents));
-
-    geometryLegB.setIndex([
-         0,   1,   2,   2,   1,   3,
-         4,   5,   6,   6,   5,   7,
-         8,   9,  10,  10,   9,  11,
-        12,  13,  14,  14,  13,  15,
-        16,  17,  18,  18,  17,  19,
-        20,  21,  22,  22,  21,  23,
-        24,  25,  26,  26,  25,  27,
-        28,  29,  30,  30,  29,  31,
-        32,  33,  34,  34,  33,  35,
-        36,  37,  38,  38,  37,  39,
-        40,  41,  42,  42,  41,  43,
-        44,  45,  46,  46,  45,  47,
-        48,  49,  50,  50,  49,  51,
-        52,  53,  54,  54,  53,  55,
-        56,  57,  58,  58,  57,  59,
-        60,  61,  62,  62,  61,  63,
-        64,  65,  66,  66,  65,  67,
-        68,  69,  70,  70,  69,  71,
-        72,  73,  74,  74,  73,  75,
-        76,  77,  78,  78,  77,  79,
-        80,  81,  82,  82,  81,  83,
-        84,  85,  86,  86,  85,  87,
-        88,  89,  90,  90,  89,  91,
-        92,  93,  94,  94,  93,  95,
-        96,  97,  98,  98,  97,  99,
-       100, 101, 102, 102, 101, 103,
-    ]);
-    
-    const materialLegB = new THREE.MeshPhongMaterial( { color: 0x555555 } );
-    
-    const meshLegB = new THREE.Mesh( geometryLegB, materialLegB );
-    meshLegB.castShadow = true;
-    scene.add( meshLegB );
   }else if(flgLeg == 'M2'){
     const legX = 70;
     const legZ = 70;
@@ -570,9 +350,6 @@ let DrawModel = function () {
     const jointX = 150;
     const jointZ = 600;
 
-    let outsideX = (faceX + legX) / 2 - offsetX;
-    let  insideX = (faceX - legX) / 2 - offsetX;
-
     let  inTopZ = gapTopZ / 2;
     let outTopZ = inTopZ + legZ;
 
@@ -580,7 +357,7 @@ let DrawModel = function () {
     let outBottomZ = inBottomZ+ legZ;
 
     let xRange = faceX / 2 - offsetX; 
-    let verticesLegC = [
+    let verticesLeg = [
       // side +
       // joint
       { pos: [- jointX / 2 + xRange, heightLegH - 1, - jointZ / 2], norm: [ 0,  -1,  0], uv: [0, 0], },
@@ -811,24 +588,24 @@ let DrawModel = function () {
     var positions = [];
     var normals = [];
     var uvs = [];
-    for (var vertex of verticesLegC) {
+    for (var vertex of verticesLeg) {
       positions.push(...vertex.pos);
       normals.push(...vertex.norm);
       uvs.push(...vertex.uv);
     }
-    const geometryLegC = new THREE.BufferGeometry();
+    const geometryLeg = new THREE.BufferGeometry();
 
-    geometryLegC.setAttribute(
+    geometryLeg.setAttribute(
       'position',
       new THREE.BufferAttribute(new Float32Array(positions), positionNumComponents));
-    geometryLegC.setAttribute(
+    geometryLeg.setAttribute(
       'normal',
       new THREE.BufferAttribute(new Float32Array(normals), normalNumComponents));
-    geometryLegC.setAttribute(
+    geometryLeg.setAttribute(
       'uv',
       new THREE.BufferAttribute(new Float32Array(uvs), uvNumComponents));
 
-    geometryLegC.setIndex([
+    geometryLeg.setIndex([
       0,   1,   2,   2,   1,   3,
 
       4,   5,   6,   6,   5,   7,
@@ -876,11 +653,232 @@ let DrawModel = function () {
     148, 149, 150, 150, 149, 151,
     ]);
     
-    const materialLegC = new THREE.MeshPhongMaterial( { color: 0x555555 } );
+    const materialLeg = new THREE.MeshPhongMaterial( { color: 0x555555 } );
     
-    const meshLegC = new THREE.Mesh( geometryLegC, materialLegC );
-    meshLegC.castShadow = true;
-    scene.add( meshLegC );
+    const meshLeg = new THREE.Mesh( geometryLeg, materialLeg );
+    meshLeg.castShadow = true;
+    scene.add( meshLeg );
+  }else if(flgLeg == 'MX'){
+    const legX = 70;
+    const legZ = 60;
+
+    const offsetX = 150;
+    const gapTopZ = 400;
+    const gapBottomZ = 300;
+
+    const jointX = 150;
+    const jointZ = 600;
+
+    let  inTopZ = gapTopZ / 2;
+    let outTopZ = inTopZ + legZ;
+
+    let  inBottomZ = gapBottomZ / 2;
+    let outBottomZ = inBottomZ+ legZ;
+
+    let xRange = faceX / 2 - offsetX; 
+    let verticesLeg = [
+      // side +
+      // joint
+      { pos: [- jointX / 2 + xRange, heightLegH - 1, - jointZ / 2], norm: [ 0,  -1,  0], uv: [0, 0], },
+      { pos: [  jointX / 2 + xRange, heightLegH - 1, - jointZ / 2], norm: [ 0,  -1,  0], uv: [1, 0], },
+      { pos: [- jointX / 2 + xRange, heightLegH - 1,   jointZ / 2], norm: [ 0,  -1,  0], uv: [0, 1], },
+      { pos: [  jointX / 2 + xRange, heightLegH - 1,   jointZ / 2], norm: [ 0,  -1,  0], uv: [1, 1], },
+      
+      // leg-1
+      // top
+      { pos: [- legX /2 + xRange, heightLegH,   inTopZ], norm: [ 0, 1, 0], uv: [0, 0], },
+      { pos: [- legX /2 + xRange, heightLegH,  outTopZ], norm: [ 0, 1, 0], uv: [0, 1], }, 
+      { pos: [  legX /2 + xRange, heightLegH,   inTopZ], norm: [ 0, 1, 0], uv: [1, 0], },
+      { pos: [  legX /2 + xRange, heightLegH,  outTopZ], norm: [ 0, 1, 0], uv: [1, 1], },
+      // bottom
+      { pos: [  legX /2 + xRange,          0, - outBottomZ], norm: [ 0,-1, 0], uv: [0, 0], },
+      { pos: [  legX /2 + xRange,          0, -  inBottomZ], norm: [ 0,-1, 0], uv: [0, 1], },
+      { pos: [- legX /2 + xRange,          0, - outBottomZ], norm: [ 0,-1, 0], uv: [1, 0], },
+      { pos: [- legX /2 + xRange,          0, -  inBottomZ], norm: [ 0,-1, 0], uv: [1, 1], },
+      // right
+      { pos: [  legX /2 + xRange, heightLegH,      outTopZ], norm: [ 1, 0, 0], uv: [0, 0], },
+      { pos: [  legX /2 + xRange,          0, -  inBottomZ], norm: [ 1, 0, 0], uv: [0, 1], },
+      { pos: [  legX /2 + xRange, heightLegH,       inTopZ], norm: [ 1, 0, 0], uv: [1, 0], },
+      { pos: [  legX /2 + xRange,          0, - outBottomZ], norm: [ 1, 0, 0], uv: [1, 1], },
+      // left
+      { pos: [- legX /2 + xRange,          0, - outBottomZ], norm: [-1, 0, 0], uv: [0, 0], },
+      { pos: [- legX /2 + xRange,          0, -  inBottomZ], norm: [-1, 0, 0], uv: [0, 1], },
+      { pos: [- legX /2 + xRange, heightLegH,       inTopZ], norm: [-1, 0, 0], uv: [1, 0], },
+      { pos: [- legX /2 + xRange, heightLegH,      outTopZ], norm: [-1, 0, 0], uv: [1, 1], },
+      // front
+      { pos: [  legX /2 + xRange,          0, -  inBottomZ], norm: [ 0, 0, 1], uv: [0, 0], },
+      { pos: [  legX /2 + xRange, heightLegH,      outTopZ], norm: [ 0, 0, 1], uv: [0, 1], },
+      { pos: [- legX /2 + xRange,          0, -  inBottomZ], norm: [ 0, 0, 1], uv: [1, 0], },
+      { pos: [- legX /2 + xRange, heightLegH,      outTopZ], norm: [ 0, 0, 1], uv: [1, 1], },
+      // back
+      { pos: [  legX /2 + xRange, heightLegH,       inTopZ], norm: [ 0, 0,-1], uv: [0, 0], },
+      { pos: [  legX /2 + xRange,          0, - outBottomZ], norm: [ 0, 0,-1], uv: [0, 1], },
+      { pos: [- legX /2 + xRange, heightLegH,       inTopZ], norm: [ 0, 0,-1], uv: [1, 0], },
+      { pos: [- legX /2 + xRange,          0, - outBottomZ], norm: [ 0, 0,-1], uv: [1, 1], },
+    
+      // leg-2
+      // top
+      { pos: [- legX /2 + xRange, heightLegH, -     inTopZ], norm: [ 0, 1, 0], uv: [0, 0], },
+      { pos: [  legX /2 + xRange, heightLegH, -     inTopZ], norm: [ 0, 1, 0], uv: [1, 0], },
+      { pos: [- legX /2 + xRange, heightLegH, -    outTopZ], norm: [ 0, 1, 0], uv: [0, 1], },
+      { pos: [  legX /2 + xRange, heightLegH, -    outTopZ], norm: [ 0, 1, 0], uv: [1, 1], },
+      // bottom
+      { pos: [  legX /2 + xRange,          0,   outBottomZ], norm: [ 0,-1, 0], uv: [0, 0], },
+      { pos: [- legX /2 + xRange,          0,   outBottomZ], norm: [ 0,-1, 0], uv: [1, 0], },
+      { pos: [  legX /2 + xRange,          0,    inBottomZ], norm: [ 0,-1, 0], uv: [0, 1], },
+      { pos: [- legX /2 + xRange,          0,    inBottomZ], norm: [ 0,-1, 0], uv: [1, 1], },
+      // right
+      { pos: [  legX /2 + xRange, heightLegH, -     inTopZ], norm: [ 1, 0, 0], uv: [0, 0], },
+      { pos: [  legX /2 + xRange,          0,   outBottomZ], norm: [ 1, 0, 0], uv: [1, 0], },
+      { pos: [  legX /2 + xRange, heightLegH, -    outTopZ], norm: [ 1, 0, 0], uv: [0, 1], },
+      { pos: [  legX /2 + xRange,          0,    inBottomZ], norm: [ 1, 0, 0], uv: [1, 1], },
+      // left
+      { pos: [- legX /2 + xRange,          0,   outBottomZ], norm: [-1, 0, 0], uv: [0, 0], },
+      { pos: [- legX /2 + xRange, heightLegH, -     inTopZ], norm: [-1, 0, 0], uv: [1, 0], },
+      { pos: [- legX /2 + xRange,          0,    inBottomZ], norm: [-1, 0, 0], uv: [0, 1], },
+      { pos: [- legX /2 + xRange, heightLegH, -    outTopZ], norm: [-1, 0, 0], uv: [1, 1], },
+      // front
+      { pos: [  legX /2 + xRange,          0,    inBottomZ], norm: [ 0, 0,-1], uv: [0, 0], },
+      { pos: [- legX /2 + xRange,          0,    inBottomZ], norm: [ 0, 0,-1], uv: [1, 0], },
+      { pos: [  legX /2 + xRange, heightLegH, -    outTopZ], norm: [ 0, 0,-1], uv: [0, 1], },
+      { pos: [- legX /2 + xRange, heightLegH, -    outTopZ], norm: [ 0, 0,-1], uv: [1, 1], },
+      // back
+      { pos: [  legX /2 + xRange, heightLegH, -     inTopZ], norm: [ 0, 0, 1], uv: [0, 0], },
+      { pos: [- legX /2 + xRange, heightLegH, -     inTopZ], norm: [ 0, 0, 1], uv: [1, 0], },
+      { pos: [  legX /2 + xRange,          0,   outBottomZ], norm: [ 0, 0, 1], uv: [0, 1], },
+      { pos: [- legX /2 + xRange,          0,   outBottomZ], norm: [ 0, 0, 1], uv: [1, 1], },
+      
+      // side -
+      // joint
+      { pos: [- jointX / 2 - xRange, heightLegH - 1, - jointZ / 2], norm: [ 0,  -1,  0], uv: [0, 0], },
+      { pos: [  jointX / 2 - xRange, heightLegH - 1, - jointZ / 2], norm: [ 0,  -1,  0], uv: [1, 0], },
+      { pos: [- jointX / 2 - xRange, heightLegH - 1,   jointZ / 2], norm: [ 0,  -1,  0], uv: [0, 1], },
+      { pos: [  jointX / 2 - xRange, heightLegH - 1,   jointZ / 2], norm: [ 0,  -1,  0], uv: [1, 1], },
+      
+      // leg-1
+      // top
+      { pos: [- legX /2 - xRange, heightLegH,   inTopZ], norm: [ 0, 1, 0], uv: [0, 0], },
+      { pos: [- legX /2 - xRange, heightLegH,  outTopZ], norm: [ 0, 1, 0], uv: [0, 1], }, 
+      { pos: [  legX /2 - xRange, heightLegH,   inTopZ], norm: [ 0, 1, 0], uv: [1, 0], },
+      { pos: [  legX /2 - xRange, heightLegH,  outTopZ], norm: [ 0, 1, 0], uv: [1, 1], },
+      // bottom
+      { pos: [  legX /2 - xRange,          0, - outBottomZ], norm: [ 0,-1, 0], uv: [0, 0], },
+      { pos: [  legX /2 - xRange,          0, -  inBottomZ], norm: [ 0,-1, 0], uv: [0, 1], },
+      { pos: [- legX /2 - xRange,          0, - outBottomZ], norm: [ 0,-1, 0], uv: [1, 0], },
+      { pos: [- legX /2 - xRange,          0, -  inBottomZ], norm: [ 0,-1, 0], uv: [1, 1], },
+      // right
+      { pos: [  legX /2 - xRange, heightLegH,      outTopZ], norm: [ 1, 0, 0], uv: [0, 0], },
+      { pos: [  legX /2 - xRange,          0, -  inBottomZ], norm: [ 1, 0, 0], uv: [0, 1], },
+      { pos: [  legX /2 - xRange, heightLegH,       inTopZ], norm: [ 1, 0, 0], uv: [1, 0], },
+      { pos: [  legX /2 - xRange,          0, - outBottomZ], norm: [ 1, 0, 0], uv: [1, 1], },
+      // left
+      { pos: [- legX /2 - xRange,          0, - outBottomZ], norm: [-1, 0, 0], uv: [0, 0], },
+      { pos: [- legX /2 - xRange,          0, -  inBottomZ], norm: [-1, 0, 0], uv: [0, 1], },
+      { pos: [- legX /2 - xRange, heightLegH,       inTopZ], norm: [-1, 0, 0], uv: [1, 0], },
+      { pos: [- legX /2 - xRange, heightLegH,      outTopZ], norm: [-1, 0, 0], uv: [1, 1], },
+      // front
+      { pos: [  legX /2 - xRange,          0, -  inBottomZ], norm: [ 0, 0, 1], uv: [0, 0], },
+      { pos: [  legX /2 - xRange, heightLegH,      outTopZ], norm: [ 0, 0, 1], uv: [0, 1], },
+      { pos: [- legX /2 - xRange,          0, -  inBottomZ], norm: [ 0, 0, 1], uv: [1, 0], },
+      { pos: [- legX /2 - xRange, heightLegH,      outTopZ], norm: [ 0, 0, 1], uv: [1, 1], },
+      // back
+      { pos: [  legX /2 - xRange, heightLegH,       inTopZ], norm: [ 0, 0,-1], uv: [0, 0], },
+      { pos: [  legX /2 - xRange,          0, - outBottomZ], norm: [ 0, 0,-1], uv: [0, 1], },
+      { pos: [- legX /2 - xRange, heightLegH,       inTopZ], norm: [ 0, 0,-1], uv: [1, 0], },
+      { pos: [- legX /2 - xRange,          0, - outBottomZ], norm: [ 0, 0,-1], uv: [1, 1], },
+    
+      // leg-2
+      // top
+      { pos: [- legX /2 - xRange, heightLegH, -     inTopZ], norm: [ 0, 1, 0], uv: [0, 0], },
+      { pos: [  legX /2 - xRange, heightLegH, -     inTopZ], norm: [ 0, 1, 0], uv: [1, 0], },
+      { pos: [- legX /2 - xRange, heightLegH, -    outTopZ], norm: [ 0, 1, 0], uv: [0, 1], },
+      { pos: [  legX /2 - xRange, heightLegH, -    outTopZ], norm: [ 0, 1, 0], uv: [1, 1], },
+      // bottom
+      { pos: [  legX /2 - xRange,          0,   outBottomZ], norm: [ 0,-1, 0], uv: [0, 0], },
+      { pos: [- legX /2 - xRange,          0,   outBottomZ], norm: [ 0,-1, 0], uv: [1, 0], },
+      { pos: [  legX /2 - xRange,          0,    inBottomZ], norm: [ 0,-1, 0], uv: [0, 1], },
+      { pos: [- legX /2 - xRange,          0,    inBottomZ], norm: [ 0,-1, 0], uv: [1, 1], },
+      // right
+      { pos: [  legX /2 - xRange, heightLegH, -     inTopZ], norm: [ 1, 0, 0], uv: [0, 0], },
+      { pos: [  legX /2 - xRange,          0,   outBottomZ], norm: [ 1, 0, 0], uv: [1, 0], },
+      { pos: [  legX /2 - xRange, heightLegH, -    outTopZ], norm: [ 1, 0, 0], uv: [0, 1], },
+      { pos: [  legX /2 - xRange,          0,    inBottomZ], norm: [ 1, 0, 0], uv: [1, 1], },
+      // left
+      { pos: [- legX /2 - xRange,          0,   outBottomZ], norm: [-1, 0, 0], uv: [0, 0], },
+      { pos: [- legX /2 - xRange, heightLegH, -     inTopZ], norm: [-1, 0, 0], uv: [1, 0], },
+      { pos: [- legX /2 - xRange,          0,    inBottomZ], norm: [-1, 0, 0], uv: [0, 1], },
+      { pos: [- legX /2 - xRange, heightLegH, -    outTopZ], norm: [-1, 0, 0], uv: [1, 1], },
+      // front
+      { pos: [  legX /2 - xRange,          0,    inBottomZ], norm: [ 0, 0,-1], uv: [0, 0], },
+      { pos: [- legX /2 - xRange,          0,    inBottomZ], norm: [ 0, 0,-1], uv: [1, 0], },
+      { pos: [  legX /2 - xRange, heightLegH, -    outTopZ], norm: [ 0, 0,-1], uv: [0, 1], },
+      { pos: [- legX /2 - xRange, heightLegH, -    outTopZ], norm: [ 0, 0,-1], uv: [1, 1], },
+      // back
+      { pos: [  legX /2 - xRange, heightLegH, -     inTopZ], norm: [ 0, 0, 1], uv: [0, 0], },
+      { pos: [- legX /2 - xRange, heightLegH, -     inTopZ], norm: [ 0, 0, 1], uv: [1, 0], },
+      { pos: [  legX /2 - xRange,          0,   outBottomZ], norm: [ 0, 0, 1], uv: [0, 1], },
+      { pos: [- legX /2 - xRange,          0,   outBottomZ], norm: [ 0, 0, 1], uv: [1, 1], },
+    ];
+
+    var positions = [];
+    var normals = [];
+    var uvs = [];
+    for (var vertex of verticesLeg) {
+      positions.push(...vertex.pos);
+      normals.push(...vertex.norm);
+      uvs.push(...vertex.uv);
+    }
+    const geometryLeg = new THREE.BufferGeometry();
+
+    geometryLeg.setAttribute(
+      'position',
+      new THREE.BufferAttribute(new Float32Array(positions), positionNumComponents));
+    geometryLeg.setAttribute(
+      'normal',
+      new THREE.BufferAttribute(new Float32Array(normals), normalNumComponents));
+    geometryLeg.setAttribute(
+      'uv',
+      new THREE.BufferAttribute(new Float32Array(uvs), uvNumComponents));
+
+    geometryLeg.setIndex([
+         0,   1,   2,   2,   1,   3,
+
+         4,   5,   6,   6,   5,   7,
+         8,   9,  10,  10,   9,  11,
+        12,  13,  14,  14,  13,  15,
+        16,  17,  18,  18,  17,  19,
+        20,  21,  22,  22,  21,  23,
+        24,  25,  26,  26,  25,  27,
+
+        28,  29,  30,  30,  29,  31,
+        32,  33,  34,  34,  33,  35,
+        36,  37,  38,  38,  37,  39,
+        40,  41,  42,  42,  41,  43,
+        44,  45,  46,  46,  45,  47,
+        48,  49,  50,  50,  49,  51,
+
+        52,  53,  54,  54,  53,  55,
+
+        56,  57,  58,  58,  57,  59,
+        60,  61,  62,  62,  61,  63,
+        64,  65,  66,  66,  65,  67,
+        68,  69,  70,  70,  69,  71,
+        72,  73,  74,  74,  73,  75,
+        76,  77,  78,  78,  77,  79,
+
+        80,  81,  82,  82,  81,  83,
+        84,  85,  86,  86,  85,  87,
+        88,  89,  90,  90,  89,  91,
+        92,  93,  94,  94,  93,  95,
+        96,  97,  98,  98,  97,  99,
+       100, 101, 102, 102, 101, 103,
+    ]);
+    
+    const materialLeg = new THREE.MeshPhongMaterial( { color: 0x555555 } );
+    
+    const meshLeg = new THREE.Mesh( geometryLeg, materialLeg );
+    meshLeg.castShadow = true;
+    scene.add( meshLeg );
   }
     let verticesFloor = [
       { pos: [  25000,  -2, -25000], norm: [ 0,  1,  0], uv: [0, 0], }, //0
