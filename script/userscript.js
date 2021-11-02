@@ -903,7 +903,222 @@ let DrawModel = function () {
     meshLeg.castShadow = true;
     scene.add( meshLeg );
     break;
-    default:
+  
+    case 'W4': //金属4本脚
+    legX = 70;
+    legZ = 70;
+
+    outsideX = (faceX + legX) / 2 - offsetLegX;
+    insideX  = (faceX - legX) / 2 - offsetLegX;
+    outsideZ = (faceZ + legZ) / 2 - offsetLegZ;
+    insideZ  = (faceZ - legZ) / 2 - offsetLegZ;
+
+    verticesLeg = [
+      // leg1
+      //top
+      { pos: [- outsideX, heightLeg, - outsideZ], norm: [ 0, 1, 0], uv: [0,0], },
+      { pos: [- outsideX, heightLeg, -  insideZ], norm: [ 0, 1, 0], uv: [0,0], },
+      { pos: [-  insideX, heightLeg, - outsideZ], norm: [ 0, 1, 0], uv: [0,0], },
+      { pos: [-  insideX, heightLeg, -  insideZ], norm: [ 0, 1, 0], uv: [0,0], },
+      
+      //bottom
+      { pos: [- outsideX,         0, - outsideZ], norm: [ 0,-1, 0], uv: [0,0], },
+      { pos: [-  insideX,         0, - outsideZ], norm: [ 0,-1, 0], uv: [0,0], },
+      { pos: [- outsideX,         0, -  insideZ], norm: [ 0,-1, 0], uv: [0,0], },
+      { pos: [-  insideX,         0, -  insideZ], norm: [ 0,-1, 0], uv: [0,0], },
+      
+      //right
+      { pos: [-  insideX, heightLeg, - outsideZ], norm: [ 1, 0, 0], uv: [0,0], },
+      { pos: [-  insideX, heightLeg, -  insideZ], norm: [ 1, 0, 0], uv: [0,0], },
+      { pos: [-  insideX,         0, - outsideZ], norm: [ 1, 0, 0], uv: [0,0], },
+      { pos: [-  insideX,         0, -  insideZ], norm: [ 1, 0, 0], uv: [0,0], },
+      
+      //left
+      { pos: [- outsideX, heightLeg, - outsideZ], norm: [-1, 0, 0], uv: [0,0], },
+      { pos: [- outsideX,         0, - outsideZ], norm: [-1, 0, 0], uv: [0,0], },
+      { pos: [- outsideX, heightLeg, -  insideZ], norm: [-1, 0, 0], uv: [0,0], },
+      { pos: [- outsideX,         0, -  insideZ], norm: [-1, 0, 0], uv: [0,0], },
+      
+      //front
+      { pos: [- outsideX, heightLeg, -  insideZ], norm: [ 0, 0, 1], uv: [0,0], },
+      { pos: [- outsideX,         0, -  insideZ], norm: [ 0, 0, 1], uv: [0,0], },
+      { pos: [-  insideX, heightLeg, -  insideZ], norm: [ 0, 0, 1], uv: [0,0], },
+      { pos: [-  insideX,         0, -  insideZ], norm: [ 0, 0, 1], uv: [0,0], },
+      
+      //back
+      { pos: [- outsideX, heightLeg, - outsideZ], norm: [ 0, 0,-1], uv: [0,0], },
+      { pos: [-  insideX, heightLeg, - outsideZ], norm: [ 0, 0,-1], uv: [0,0], },
+      { pos: [- outsideX,         0, - outsideZ], norm: [ 0, 0,-1], uv: [0,0], },
+      { pos: [-  insideX,         0, - outsideZ], norm: [ 0, 0,-1], uv: [0,0], },
+
+      // leg2
+      //top
+      { pos: [  outsideX, heightLeg, - outsideZ], norm: [ 0, 1, 0], uv: [0,0], },
+      { pos: [   insideX, heightLeg, - outsideZ], norm: [ 0, 1, 0], uv: [0,0], },
+      { pos: [  outsideX, heightLeg, -  insideZ], norm: [ 0, 1, 0], uv: [0,0], },
+      { pos: [   insideX, heightLeg, -  insideZ], norm: [ 0, 1, 0], uv: [0,0], },
+      
+      //bottom
+      { pos: [  outsideX,         0, - outsideZ], norm: [ 0,-1, 0], uv: [0,0], },
+      { pos: [  outsideX,         0, -  insideZ], norm: [ 0,-1, 0], uv: [0,0], },
+      { pos: [   insideX,         0, - outsideZ], norm: [ 0,-1, 0], uv: [0,0], },
+      { pos: [   insideX,         0, -  insideZ], norm: [ 0,-1, 0], uv: [0,0], },
+      
+      //right
+      { pos: [   insideX, heightLeg, - outsideZ], norm: [-1, 0, 0], uv: [0,0], },
+      { pos: [   insideX,         0, - outsideZ], norm: [-1, 0, 0], uv: [0,0], },
+      { pos: [   insideX, heightLeg, -  insideZ], norm: [-1, 0, 0], uv: [0,0], },
+      { pos: [   insideX,         0, -  insideZ], norm: [-1, 0, 0], uv: [0,0], },
+      
+      //left
+      { pos: [  outsideX, heightLeg, - outsideZ], norm: [ 1, 0, 0], uv: [0,0], },
+      { pos: [  outsideX, heightLeg, -  insideZ], norm: [ 1, 0, 0], uv: [0,0], },
+      { pos: [  outsideX,         0, - outsideZ], norm: [ 1, 0, 0], uv: [0,0], },
+      { pos: [  outsideX,         0, -  insideZ], norm: [ 1, 0, 0], uv: [0,0], },
+      
+      //front
+      { pos: [  outsideX, heightLeg, -  insideZ], norm: [ 0, 0, 1], uv: [0,0], },
+      { pos: [   insideX, heightLeg, -  insideZ], norm: [ 0, 0, 1], uv: [0,0], },
+      { pos: [  outsideX,         0, -  insideZ], norm: [ 0, 0, 1], uv: [0,0], },
+      { pos: [   insideX,         0, -  insideZ], norm: [ 0, 0, 1], uv: [0,0], },
+      
+      //back
+      { pos: [  outsideX, heightLeg, - outsideZ], norm: [ 0, 0,-1], uv: [0,0], },
+      { pos: [  outsideX,         0, - outsideZ], norm: [ 0, 0,-1], uv: [0,0], },
+      { pos: [   insideX, heightLeg, - outsideZ], norm: [ 0, 0,-1], uv: [0,0], },
+      { pos: [   insideX,         0, - outsideZ], norm: [ 0, 0,-1], uv: [0,0], },
+
+      // leg3
+      //top
+      { pos: [- outsideX, heightLeg,    insideZ], norm: [ 0, 1, 0], uv: [0,0], },
+      { pos: [- outsideX, heightLeg,   outsideZ], norm: [ 0, 1, 0], uv: [0,0], },
+      { pos: [-  insideX, heightLeg,    insideZ], norm: [ 0, 1, 0], uv: [0,0], },
+      { pos: [-  insideX, heightLeg,   outsideZ], norm: [ 0, 1, 0], uv: [0,0], },
+      
+      //bottom
+      { pos: [- outsideX,         0,    insideZ], norm: [ 0,-1, 0], uv: [0,0], },
+      { pos: [-  insideX,         0,    insideZ], norm: [ 0,-1, 0], uv: [0,0], },
+      { pos: [- outsideX,         0,   outsideZ], norm: [ 0,-1, 0], uv: [0,0], },
+      { pos: [-  insideX,         0,   outsideZ], norm: [ 0,-1, 0], uv: [0,0], },
+      
+      //right
+      { pos: [-  insideX, heightLeg,    insideZ], norm: [ 1, 0, 0], uv: [0,0], },
+      { pos: [-  insideX, heightLeg,   outsideZ], norm: [ 1, 0, 0], uv: [0,0], },
+      { pos: [-  insideX,         0,    insideZ], norm: [ 1, 0, 0], uv: [0,0], },
+      { pos: [-  insideX,         0,   outsideZ], norm: [ 1, 0, 0], uv: [0,0], },
+      
+      //left
+      { pos: [- outsideX, heightLeg,    insideZ], norm: [-1, 0, 0], uv: [0,0], },
+      { pos: [- outsideX,         0,    insideZ], norm: [-1, 0, 0], uv: [0,0], },
+      { pos: [- outsideX, heightLeg,   outsideZ], norm: [-1, 0, 0], uv: [0,0], },
+      { pos: [- outsideX,         0,   outsideZ], norm: [-1, 0, 0], uv: [0,0], },
+      
+      //front
+      { pos: [- outsideX, heightLeg,   outsideZ], norm: [ 0, 0, 1], uv: [0,0], },
+      { pos: [- outsideX,         0,   outsideZ], norm: [ 0, 0, 1], uv: [0,0], },
+      { pos: [-  insideX, heightLeg,   outsideZ], norm: [ 0, 0, 1], uv: [0,0], },
+      { pos: [-  insideX,         0,   outsideZ], norm: [ 0, 0, 1], uv: [0,0], },
+      
+      //back
+      { pos: [- outsideX, heightLeg,    insideZ], norm: [ 0, 0,-1], uv: [0,0], },
+      { pos: [-  insideX, heightLeg,    insideZ], norm: [ 0, 0,-1], uv: [0,0], },
+      { pos: [- outsideX,         0,    insideZ], norm: [ 0, 0,-1], uv: [0,0], },
+      { pos: [-  insideX,         0,    insideZ], norm: [ 0, 0,-1], uv: [0,0], },
+
+      // leg4
+      //top
+      { pos: [  outsideX, heightLeg,    insideZ], norm: [ 0, 1, 0], uv: [0,0], },
+      { pos: [   insideX, heightLeg,    insideZ], norm: [ 0, 1, 0], uv: [0,0], },
+      { pos: [  outsideX, heightLeg,   outsideZ], norm: [ 0, 1, 0], uv: [0,0], },
+      { pos: [   insideX, heightLeg,   outsideZ], norm: [ 0, 1, 0], uv: [0,0], },
+      
+      //bottom
+      { pos: [  outsideX,         0,    insideZ], norm: [ 0,-1, 0], uv: [0,0], },
+      { pos: [  outsideX,         0,   outsideZ], norm: [ 0,-1, 0], uv: [0,0], },
+      { pos: [   insideX,         0,    insideZ], norm: [ 0,-1, 0], uv: [0,0], },
+      { pos: [   insideX,         0,   outsideZ], norm: [ 0,-1, 0], uv: [0,0], },
+      
+      //right
+      { pos: [   insideX, heightLeg,    insideZ], norm: [-1, 0, 0], uv: [0,0], },
+      { pos: [   insideX,         0,    insideZ], norm: [-1, 0, 0], uv: [0,0], },
+      { pos: [   insideX, heightLeg,   outsideZ], norm: [-1, 0, 0], uv: [0,0], },
+      { pos: [   insideX,         0,   outsideZ], norm: [-1, 0, 0], uv: [0,0], },
+      
+      //left
+      { pos: [  outsideX, heightLeg,    insideZ], norm: [ 1, 0, 0], uv: [0,0], },
+      { pos: [  outsideX, heightLeg,   outsideZ], norm: [ 1, 0, 0], uv: [0,0], },
+      { pos: [  outsideX,         0,    insideZ], norm: [ 1, 0, 0], uv: [0,0], },
+      { pos: [  outsideX,         0,   outsideZ], norm: [ 1, 0, 0], uv: [0,0], },
+      
+      //front
+      { pos: [  outsideX, heightLeg,   outsideZ], norm: [ 0, 0, 1], uv: [0,0], },
+      { pos: [   insideX, heightLeg,   outsideZ], norm: [ 0, 0, 1], uv: [0,0], },
+      { pos: [  outsideX,         0,   outsideZ], norm: [ 0, 0, 1], uv: [0,0], },
+      { pos: [   insideX,         0,   outsideZ], norm: [ 0, 0, 1], uv: [0,0], },
+      
+      //back
+      { pos: [  outsideX, heightLeg,    insideZ], norm: [ 0, 0,-1], uv: [0,0], },
+      { pos: [  outsideX,         0,    insideZ], norm: [ 0, 0,-1], uv: [0,0], },
+      { pos: [   insideX, heightLeg,    insideZ], norm: [ 0, 0,-1], uv: [0,0], },
+      { pos: [   insideX,         0,    insideZ], norm: [ 0, 0,-1], uv: [0,0], },
+    ];
+    var positions = [];
+    var normals = [];
+    var uvs = [];
+    for (var vertex of verticesLeg) {
+      positions.push(...vertex.pos);
+      normals.push(...vertex.norm);
+      uvs.push(...vertex.uv);
+    }
+    geometryLeg = new THREE.BufferGeometry();
+
+    geometryLeg.setAttribute(
+      'position',
+      new THREE.BufferAttribute(new Float32Array(positions), positionNumComponents));
+    geometryLeg.setAttribute(
+      'normal',
+      new THREE.BufferAttribute(new Float32Array(normals), normalNumComponents));
+    geometryLeg.setAttribute(
+      'uv',
+      new THREE.BufferAttribute(new Float32Array(uvs), uvNumComponents));
+
+    geometryLeg.setIndex([
+         0,   1,   2,   2,   1,   3,
+         4,   5,   6,   6,   5,   7,
+         8,   9,  10,  10,   9,  11,
+        12,  13,  14,  14,  13,  15,
+        16,  17,  18,  18,  17,  19,
+        20,  21,  22,  22,  21,  23,
+
+        24,  25,  26,  26,  25,  27,
+        28,  29,  30,  30,  29,  31,
+        32,  33,  34,  34,  33,  35,
+        36,  37,  38,  38,  37,  39,
+        40,  41,  42,  42,  41,  43,
+        44,  45,  46,  46,  45,  47,
+
+        48,  49,  50,  50,  49,  51,
+        52,  53,  54,  54,  53,  55,
+        56,  57,  58,  58,  57,  59,
+        60,  61,  62,  62,  61,  63,
+        64,  65,  66,  66,  65,  67,
+        68,  69,  70,  70,  69,  71,
+
+        72,  73,  74,  74,  73,  75,
+        76,  77,  78,  78,  77,  79,
+        80,  81,  82,  82,  81,  83,
+        84,  85,  86,  86,  85,  87,
+        88,  89,  90,  90,  89,  91,
+        92,  93,  94,  94,  93,  95,
+    ]);
+
+    materialLeg = new THREE.MeshPhongMaterial( { color: 0x664422 } );
+    meshLeg = new THREE.Mesh( geometryLeg, materialLeg );
+    meshLeg.castShadow = true;
+    scene.add( meshLeg );
+    break;
+
+  default:
       console.log('脚を指定してください。');
   }
     let verticesFloor = [
@@ -995,6 +1210,8 @@ toggleLeg.addEventListener( 'click', () => {
       flgLeg = 'M2';
     }else if(flgLeg == 'M2'){
       flgLeg = 'MX';
+    }else if(flgLeg == 'MX'){
+      flgLeg = 'W4';
     }else{
       flgLeg = 'M4';
     }
