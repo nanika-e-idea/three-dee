@@ -26,6 +26,28 @@ let faceY = 28;
 let faceZ = 700;
 let heightLeg = heightLegH;
 
+let legX;
+let legZ;
+let offsetX;
+let jointX;
+let jointZ;
+let outsideX;
+let outsideZ;
+let insideX;
+let insideZ;
+let gapTopZ;
+let gapBottomZ;
+let inTopZ;
+let outTopZ;
+let inBottomZ;
+let outBottomZ;
+let xRange;
+
+let verticesLeg = [];
+let geometryLeg;
+let materialLeg;
+let meshLeg;
+
 let DrawModel = function () {
     const canvas = document.querySelector('#three');
     const renderer = new THREE.WebGLRenderer({canvas, antialias: true});
@@ -125,17 +147,17 @@ let DrawModel = function () {
     meshFace.castShadow = true;
     scene.add( meshFace );
   
-  if(flgLeg == 'M4'){
-  //金属4本脚
-    const legX = 50;
-    const legZ = 50;
+  switch(flgLeg){
+  case 'M4': //金属4本脚
+    legX = 50;
+    legZ = 50;
 
-    let outsideX = (faceX + legX) / 2 - offsetLegX;
-    let  insideX = (faceX - legX) / 2 - offsetLegX;
-    let outsideZ = (faceZ + legZ) / 2 - offsetLegZ;
-    let  insideZ = (faceZ - legZ) / 2 - offsetLegZ;
+    outsideX = (faceX + legX) / 2 - offsetLegX;
+    insideX  = (faceX - legX) / 2 - offsetLegX;
+    outsideZ = (faceZ + legZ) / 2 - offsetLegZ;
+    insideZ  = (faceZ - legZ) / 2 - offsetLegZ;
 
-    let verticesLeg = [
+    verticesLeg = [
       // leg1
       //top
       { pos: [- outsideX, heightLeg, - outsideZ], norm: [ 0, 1, 0], uv: [0,0], },
@@ -292,7 +314,7 @@ let DrawModel = function () {
       normals.push(...vertex.norm);
       uvs.push(...vertex.uv);
     }
-    const geometryLeg = new THREE.BufferGeometry();
+    geometryLeg = new THREE.BufferGeometry();
 
     geometryLeg.setAttribute(
       'position',
@@ -334,30 +356,31 @@ let DrawModel = function () {
         92,  93,  94,  94,  93,  95,
     ]);
 
-    const materialLeg = new THREE.MeshPhongMaterial( { color: 0x555555 } );
-    const meshLeg = new THREE.Mesh( geometryLeg, materialLeg );
+    materialLeg = new THREE.MeshPhongMaterial( { color: 0x555555 } );
+    meshLeg = new THREE.Mesh( geometryLeg, materialLeg );
     meshLeg.castShadow = true;
     scene.add( meshLeg );
- 
-  }else if(flgLeg == 'M2'){
-    const legX = 70;
-    const legZ = 70;
+    break;
 
-    const offsetX = 150;
-    const gapTopZ = 300;
-    const gapBottomZ = 600;
+  case 'M2': //金物2本脚
+    legX = 70;
+    legZ = 70;
 
-    const jointX = 150;
-    const jointZ = 600;
+    offsetX = 150;
+    gapTopZ = 300;
+    gapBottomZ = 600;
 
-    let  inTopZ = gapTopZ / 2;
-    let outTopZ = inTopZ + legZ;
+    jointX = 150;
+    jointZ = 600;
 
-    let  inBottomZ = gapBottomZ / 2;
-    let outBottomZ = inBottomZ+ legZ;
+    inTopZ  = gapTopZ / 2;
+    outTopZ = inTopZ + legZ;
 
-    let xRange = faceX / 2 - offsetX; 
-    let verticesLeg = [
+    inBottomZ  = gapBottomZ / 2;
+    outBottomZ = inBottomZ+ legZ;
+
+    xRange = faceX / 2 - offsetX; 
+    verticesLeg = [
       // side +
       // joint
       { pos: [- jointX / 2 + xRange, heightLegH - 1, - jointZ / 2], norm: [ 0,  -1,  0], uv: [0, 0], },
@@ -593,7 +616,7 @@ let DrawModel = function () {
       normals.push(...vertex.norm);
       uvs.push(...vertex.uv);
     }
-    const geometryLeg = new THREE.BufferGeometry();
+    geometryLeg = new THREE.BufferGeometry();
 
     geometryLeg.setAttribute(
       'position',
@@ -653,30 +676,30 @@ let DrawModel = function () {
     148, 149, 150, 150, 149, 151,
     ]);
     
-    const materialLeg = new THREE.MeshPhongMaterial( { color: 0x555555 } );
-    
-    const meshLeg = new THREE.Mesh( geometryLeg, materialLeg );
+    materialLeg = new THREE.MeshPhongMaterial( { color: 0x555555 } );
+    meshLeg = new THREE.Mesh( geometryLeg, materialLeg );
     meshLeg.castShadow = true;
     scene.add( meshLeg );
-  }else if(flgLeg == 'MX'){
-    const legX = 70;
-    const legZ = 60;
+    break;
 
-    const offsetX = 150;
-    const gapTopZ = 400;
-    const gapBottomZ = 300;
+  case 'MX': //金物X型脚
+    legX = 70;
+    legZ = 60;
 
-    const jointX = 150;
-    const jointZ = 600;
+    gapTopZ = 400;
+    gapBottomZ = 300;
 
-    let  inTopZ = gapTopZ / 2;
-    let outTopZ = inTopZ + legZ;
+    jointX = 150;
+    jointZ = 600;
 
-    let  inBottomZ = gapBottomZ / 2;
-    let outBottomZ = inBottomZ+ legZ;
+    inTopZ  = gapTopZ / 2;
+    outTopZ = inTopZ + legZ;
 
-    let xRange = faceX / 2 - offsetX; 
-    let verticesLeg = [
+    inBottomZ = gapBottomZ / 2;
+    outBottomZ = inBottomZ+ legZ;
+
+    xRange = faceX / 2 - offsetX; 
+    verticesLeg = [
       // side +
       // joint
       { pos: [- jointX / 2 + xRange, heightLegH - 1, - jointZ / 2], norm: [ 0,  -1,  0], uv: [0, 0], },
@@ -828,7 +851,7 @@ let DrawModel = function () {
       normals.push(...vertex.norm);
       uvs.push(...vertex.uv);
     }
-    const geometryLeg = new THREE.BufferGeometry();
+    geometryLeg = new THREE.BufferGeometry();
 
     geometryLeg.setAttribute(
       'position',
@@ -874,11 +897,14 @@ let DrawModel = function () {
        100, 101, 102, 102, 101, 103,
     ]);
     
-    const materialLeg = new THREE.MeshPhongMaterial( { color: 0x555555 } );
+    materialLeg = new THREE.MeshPhongMaterial( { color: 0x555555 } );
     
-    const meshLeg = new THREE.Mesh( geometryLeg, materialLeg );
+    meshLeg = new THREE.Mesh( geometryLeg, materialLeg );
     meshLeg.castShadow = true;
     scene.add( meshLeg );
+    break;
+    default:
+      console.log('脚を指定してください。');
   }
     let verticesFloor = [
       { pos: [  25000,  -2, -25000], norm: [ 0,  1,  0], uv: [0, 0], }, //0
