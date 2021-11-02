@@ -5,8 +5,8 @@ const aspect = width / height;
 const near = 100;
 const far = 100000;
 
-const heightLegH = 750;
-const heightLegL = 350;
+const heightLegH = 720;
+const heightLegL = 420;
 
 const offsetLegX = 80;
 const offsetLegZ = 120;
@@ -363,8 +363,8 @@ let DrawModel = function () {
     break;
 
   case 'M2': //金物2本脚
-    legX = 70;
-    legZ = 70;
+    legX = 50;
+    legZ = 60;
 
     offsetX = 150;
     gapTopZ = 300;
@@ -683,11 +683,11 @@ let DrawModel = function () {
     break;
 
   case 'MX': //金物X型脚
-    legX = 70;
-    legZ = 60;
+    legX = 50;
+    legZ = 70;
 
     gapTopZ = 400;
-    gapBottomZ = 300;
+    gapBottomZ = 500;
 
     jointX = 150;
     jointZ = 600;
