@@ -904,9 +904,11 @@ let DrawModel = function () {
     scene.add( meshLeg );
     break;
   
-    case 'W4': //金属4本脚
-    legX = 70;
-    legZ = 70;
+    case 'W4': //木製4本脚
+    legX = 60;
+    legZ = 120;
+
+    let offsetBottom = 30;
 
     outsideX = (faceX + legX) / 2 - offsetLegX;
     insideX  = (faceX - legX) / 2 - offsetLegX;
@@ -922,34 +924,34 @@ let DrawModel = function () {
       { pos: [-  insideX, heightLeg, -  insideZ], norm: [ 0, 1, 0], uv: [0,0], },
       
       //bottom
-      { pos: [- outsideX,         0, - outsideZ], norm: [ 0,-1, 0], uv: [0,0], },
-      { pos: [-  insideX,         0, - outsideZ], norm: [ 0,-1, 0], uv: [0,0], },
-      { pos: [- outsideX,         0, -  insideZ], norm: [ 0,-1, 0], uv: [0,0], },
-      { pos: [-  insideX,         0, -  insideZ], norm: [ 0,-1, 0], uv: [0,0], },
+      { pos: [- outsideX,         0, - outsideZ + offsetBottom], norm: [ 0,-1, 0], uv: [0,0], },
+      { pos: [-  insideX,         0, - outsideZ + offsetBottom], norm: [ 0,-1, 0], uv: [0,0], },
+      { pos: [- outsideX,         0, -  insideZ - offsetBottom], norm: [ 0,-1, 0], uv: [0,0], },
+      { pos: [-  insideX,         0, -  insideZ - offsetBottom], norm: [ 0,-1, 0], uv: [0,0], },
       
       //right
       { pos: [-  insideX, heightLeg, - outsideZ], norm: [ 1, 0, 0], uv: [0,0], },
       { pos: [-  insideX, heightLeg, -  insideZ], norm: [ 1, 0, 0], uv: [0,0], },
-      { pos: [-  insideX,         0, - outsideZ], norm: [ 1, 0, 0], uv: [0,0], },
-      { pos: [-  insideX,         0, -  insideZ], norm: [ 1, 0, 0], uv: [0,0], },
+      { pos: [-  insideX,         0, - outsideZ + offsetBottom], norm: [ 1, 0, 0], uv: [0,0], },
+      { pos: [-  insideX,         0, -  insideZ - offsetBottom], norm: [ 1, 0, 0], uv: [0,0], },
       
       //left
       { pos: [- outsideX, heightLeg, - outsideZ], norm: [-1, 0, 0], uv: [0,0], },
-      { pos: [- outsideX,         0, - outsideZ], norm: [-1, 0, 0], uv: [0,0], },
+      { pos: [- outsideX,         0, - outsideZ + offsetBottom], norm: [-1, 0, 0], uv: [0,0], },
       { pos: [- outsideX, heightLeg, -  insideZ], norm: [-1, 0, 0], uv: [0,0], },
-      { pos: [- outsideX,         0, -  insideZ], norm: [-1, 0, 0], uv: [0,0], },
+      { pos: [- outsideX,         0, -  insideZ - offsetBottom], norm: [-1, 0, 0], uv: [0,0], },
       
       //front
       { pos: [- outsideX, heightLeg, -  insideZ], norm: [ 0, 0, 1], uv: [0,0], },
-      { pos: [- outsideX,         0, -  insideZ], norm: [ 0, 0, 1], uv: [0,0], },
+      { pos: [- outsideX,         0, -  insideZ - offsetBottom], norm: [ 0, 0, 1], uv: [0,0], },
       { pos: [-  insideX, heightLeg, -  insideZ], norm: [ 0, 0, 1], uv: [0,0], },
-      { pos: [-  insideX,         0, -  insideZ], norm: [ 0, 0, 1], uv: [0,0], },
+      { pos: [-  insideX,         0, -  insideZ - offsetBottom], norm: [ 0, 0, 1], uv: [0,0], },
       
       //back
       { pos: [- outsideX, heightLeg, - outsideZ], norm: [ 0, 0,-1], uv: [0,0], },
       { pos: [-  insideX, heightLeg, - outsideZ], norm: [ 0, 0,-1], uv: [0,0], },
-      { pos: [- outsideX,         0, - outsideZ], norm: [ 0, 0,-1], uv: [0,0], },
-      { pos: [-  insideX,         0, - outsideZ], norm: [ 0, 0,-1], uv: [0,0], },
+      { pos: [- outsideX,         0, - outsideZ + offsetBottom], norm: [ 0, 0,-1], uv: [0,0], },
+      { pos: [-  insideX,         0, - outsideZ + offsetBottom], norm: [ 0, 0,-1], uv: [0,0], },
 
       // leg2
       //top
@@ -959,34 +961,34 @@ let DrawModel = function () {
       { pos: [   insideX, heightLeg, -  insideZ], norm: [ 0, 1, 0], uv: [0,0], },
       
       //bottom
-      { pos: [  outsideX,         0, - outsideZ], norm: [ 0,-1, 0], uv: [0,0], },
-      { pos: [  outsideX,         0, -  insideZ], norm: [ 0,-1, 0], uv: [0,0], },
-      { pos: [   insideX,         0, - outsideZ], norm: [ 0,-1, 0], uv: [0,0], },
-      { pos: [   insideX,         0, -  insideZ], norm: [ 0,-1, 0], uv: [0,0], },
+      { pos: [  outsideX,         0, - outsideZ + offsetBottom], norm: [ 0,-1, 0], uv: [0,0], },
+      { pos: [  outsideX,         0, -  insideZ - offsetBottom], norm: [ 0,-1, 0], uv: [0,0], },
+      { pos: [   insideX,         0, - outsideZ + offsetBottom], norm: [ 0,-1, 0], uv: [0,0], },
+      { pos: [   insideX,         0, -  insideZ - offsetBottom], norm: [ 0,-1, 0], uv: [0,0], },
       
       //right
       { pos: [   insideX, heightLeg, - outsideZ], norm: [-1, 0, 0], uv: [0,0], },
-      { pos: [   insideX,         0, - outsideZ], norm: [-1, 0, 0], uv: [0,0], },
+      { pos: [   insideX,         0, - outsideZ + offsetBottom], norm: [-1, 0, 0], uv: [0,0], },
       { pos: [   insideX, heightLeg, -  insideZ], norm: [-1, 0, 0], uv: [0,0], },
-      { pos: [   insideX,         0, -  insideZ], norm: [-1, 0, 0], uv: [0,0], },
+      { pos: [   insideX,         0, -  insideZ - offsetBottom], norm: [-1, 0, 0], uv: [0,0], },
       
       //left
       { pos: [  outsideX, heightLeg, - outsideZ], norm: [ 1, 0, 0], uv: [0,0], },
       { pos: [  outsideX, heightLeg, -  insideZ], norm: [ 1, 0, 0], uv: [0,0], },
-      { pos: [  outsideX,         0, - outsideZ], norm: [ 1, 0, 0], uv: [0,0], },
-      { pos: [  outsideX,         0, -  insideZ], norm: [ 1, 0, 0], uv: [0,0], },
+      { pos: [  outsideX,         0, - outsideZ + offsetBottom], norm: [ 1, 0, 0], uv: [0,0], },
+      { pos: [  outsideX,         0, -  insideZ - offsetBottom], norm: [ 1, 0, 0], uv: [0,0], },
       
       //front
       { pos: [  outsideX, heightLeg, -  insideZ], norm: [ 0, 0, 1], uv: [0,0], },
       { pos: [   insideX, heightLeg, -  insideZ], norm: [ 0, 0, 1], uv: [0,0], },
-      { pos: [  outsideX,         0, -  insideZ], norm: [ 0, 0, 1], uv: [0,0], },
-      { pos: [   insideX,         0, -  insideZ], norm: [ 0, 0, 1], uv: [0,0], },
+      { pos: [  outsideX,         0, -  insideZ - offsetBottom], norm: [ 0, 0, 1], uv: [0,0], },
+      { pos: [   insideX,         0, -  insideZ - offsetBottom], norm: [ 0, 0, 1], uv: [0,0], },
       
       //back
       { pos: [  outsideX, heightLeg, - outsideZ], norm: [ 0, 0,-1], uv: [0,0], },
-      { pos: [  outsideX,         0, - outsideZ], norm: [ 0, 0,-1], uv: [0,0], },
+      { pos: [  outsideX,         0, - outsideZ + offsetBottom], norm: [ 0, 0,-1], uv: [0,0], },
       { pos: [   insideX, heightLeg, - outsideZ], norm: [ 0, 0,-1], uv: [0,0], },
-      { pos: [   insideX,         0, - outsideZ], norm: [ 0, 0,-1], uv: [0,0], },
+      { pos: [   insideX,         0, - outsideZ + offsetBottom], norm: [ 0, 0,-1], uv: [0,0], },
 
       // leg3
       //top
@@ -996,34 +998,34 @@ let DrawModel = function () {
       { pos: [-  insideX, heightLeg,   outsideZ], norm: [ 0, 1, 0], uv: [0,0], },
       
       //bottom
-      { pos: [- outsideX,         0,    insideZ], norm: [ 0,-1, 0], uv: [0,0], },
-      { pos: [-  insideX,         0,    insideZ], norm: [ 0,-1, 0], uv: [0,0], },
-      { pos: [- outsideX,         0,   outsideZ], norm: [ 0,-1, 0], uv: [0,0], },
-      { pos: [-  insideX,         0,   outsideZ], norm: [ 0,-1, 0], uv: [0,0], },
+      { pos: [- outsideX,         0,    insideZ + offsetBottom], norm: [ 0,-1, 0], uv: [0,0], },
+      { pos: [-  insideX,         0,    insideZ + offsetBottom], norm: [ 0,-1, 0], uv: [0,0], },
+      { pos: [- outsideX,         0,   outsideZ - offsetBottom], norm: [ 0,-1, 0], uv: [0,0], },
+      { pos: [-  insideX,         0,   outsideZ - offsetBottom], norm: [ 0,-1, 0], uv: [0,0], },
       
       //right
       { pos: [-  insideX, heightLeg,    insideZ], norm: [ 1, 0, 0], uv: [0,0], },
       { pos: [-  insideX, heightLeg,   outsideZ], norm: [ 1, 0, 0], uv: [0,0], },
-      { pos: [-  insideX,         0,    insideZ], norm: [ 1, 0, 0], uv: [0,0], },
-      { pos: [-  insideX,         0,   outsideZ], norm: [ 1, 0, 0], uv: [0,0], },
+      { pos: [-  insideX,         0,    insideZ + offsetBottom], norm: [ 1, 0, 0], uv: [0,0], },
+      { pos: [-  insideX,         0,   outsideZ - offsetBottom], norm: [ 1, 0, 0], uv: [0,0], },
       
       //left
       { pos: [- outsideX, heightLeg,    insideZ], norm: [-1, 0, 0], uv: [0,0], },
-      { pos: [- outsideX,         0,    insideZ], norm: [-1, 0, 0], uv: [0,0], },
+      { pos: [- outsideX,         0,    insideZ + offsetBottom], norm: [-1, 0, 0], uv: [0,0], },
       { pos: [- outsideX, heightLeg,   outsideZ], norm: [-1, 0, 0], uv: [0,0], },
-      { pos: [- outsideX,         0,   outsideZ], norm: [-1, 0, 0], uv: [0,0], },
+      { pos: [- outsideX,         0,   outsideZ - offsetBottom], norm: [-1, 0, 0], uv: [0,0], },
       
       //front
       { pos: [- outsideX, heightLeg,   outsideZ], norm: [ 0, 0, 1], uv: [0,0], },
-      { pos: [- outsideX,         0,   outsideZ], norm: [ 0, 0, 1], uv: [0,0], },
+      { pos: [- outsideX,         0,   outsideZ - offsetBottom], norm: [ 0, 0, 1], uv: [0,0], },
       { pos: [-  insideX, heightLeg,   outsideZ], norm: [ 0, 0, 1], uv: [0,0], },
-      { pos: [-  insideX,         0,   outsideZ], norm: [ 0, 0, 1], uv: [0,0], },
+      { pos: [-  insideX,         0,   outsideZ - offsetBottom], norm: [ 0, 0, 1], uv: [0,0], },
       
       //back
       { pos: [- outsideX, heightLeg,    insideZ], norm: [ 0, 0,-1], uv: [0,0], },
       { pos: [-  insideX, heightLeg,    insideZ], norm: [ 0, 0,-1], uv: [0,0], },
-      { pos: [- outsideX,         0,    insideZ], norm: [ 0, 0,-1], uv: [0,0], },
-      { pos: [-  insideX,         0,    insideZ], norm: [ 0, 0,-1], uv: [0,0], },
+      { pos: [- outsideX,         0,    insideZ + offsetBottom], norm: [ 0, 0,-1], uv: [0,0], },
+      { pos: [-  insideX,         0,    insideZ + offsetBottom], norm: [ 0, 0,-1], uv: [0,0], },
 
       // leg4
       //top
@@ -1033,34 +1035,34 @@ let DrawModel = function () {
       { pos: [   insideX, heightLeg,   outsideZ], norm: [ 0, 1, 0], uv: [0,0], },
       
       //bottom
-      { pos: [  outsideX,         0,    insideZ], norm: [ 0,-1, 0], uv: [0,0], },
-      { pos: [  outsideX,         0,   outsideZ], norm: [ 0,-1, 0], uv: [0,0], },
-      { pos: [   insideX,         0,    insideZ], norm: [ 0,-1, 0], uv: [0,0], },
-      { pos: [   insideX,         0,   outsideZ], norm: [ 0,-1, 0], uv: [0,0], },
+      { pos: [  outsideX,         0,    insideZ + offsetBottom], norm: [ 0,-1, 0], uv: [0,0], },
+      { pos: [  outsideX,         0,   outsideZ - offsetBottom], norm: [ 0,-1, 0], uv: [0,0], },
+      { pos: [   insideX,         0,    insideZ + offsetBottom], norm: [ 0,-1, 0], uv: [0,0], },
+      { pos: [   insideX,         0,   outsideZ - offsetBottom], norm: [ 0,-1, 0], uv: [0,0], },
       
       //right
       { pos: [   insideX, heightLeg,    insideZ], norm: [-1, 0, 0], uv: [0,0], },
-      { pos: [   insideX,         0,    insideZ], norm: [-1, 0, 0], uv: [0,0], },
+      { pos: [   insideX,         0,    insideZ + offsetBottom], norm: [-1, 0, 0], uv: [0,0], },
       { pos: [   insideX, heightLeg,   outsideZ], norm: [-1, 0, 0], uv: [0,0], },
-      { pos: [   insideX,         0,   outsideZ], norm: [-1, 0, 0], uv: [0,0], },
+      { pos: [   insideX,         0,   outsideZ - offsetBottom], norm: [-1, 0, 0], uv: [0,0], },
       
       //left
       { pos: [  outsideX, heightLeg,    insideZ], norm: [ 1, 0, 0], uv: [0,0], },
       { pos: [  outsideX, heightLeg,   outsideZ], norm: [ 1, 0, 0], uv: [0,0], },
-      { pos: [  outsideX,         0,    insideZ], norm: [ 1, 0, 0], uv: [0,0], },
-      { pos: [  outsideX,         0,   outsideZ], norm: [ 1, 0, 0], uv: [0,0], },
+      { pos: [  outsideX,         0,    insideZ + offsetBottom], norm: [ 1, 0, 0], uv: [0,0], },
+      { pos: [  outsideX,         0,   outsideZ - offsetBottom], norm: [ 1, 0, 0], uv: [0,0], },
       
       //front
       { pos: [  outsideX, heightLeg,   outsideZ], norm: [ 0, 0, 1], uv: [0,0], },
       { pos: [   insideX, heightLeg,   outsideZ], norm: [ 0, 0, 1], uv: [0,0], },
-      { pos: [  outsideX,         0,   outsideZ], norm: [ 0, 0, 1], uv: [0,0], },
-      { pos: [   insideX,         0,   outsideZ], norm: [ 0, 0, 1], uv: [0,0], },
+      { pos: [  outsideX,         0,   outsideZ - offsetBottom], norm: [ 0, 0, 1], uv: [0,0], },
+      { pos: [   insideX,         0,   outsideZ - offsetBottom], norm: [ 0, 0, 1], uv: [0,0], },
       
       //back
       { pos: [  outsideX, heightLeg,    insideZ], norm: [ 0, 0,-1], uv: [0,0], },
-      { pos: [  outsideX,         0,    insideZ], norm: [ 0, 0,-1], uv: [0,0], },
+      { pos: [  outsideX,         0,    insideZ + offsetBottom], norm: [ 0, 0,-1], uv: [0,0], },
       { pos: [   insideX, heightLeg,    insideZ], norm: [ 0, 0,-1], uv: [0,0], },
-      { pos: [   insideX,         0,    insideZ], norm: [ 0, 0,-1], uv: [0,0], },
+      { pos: [   insideX,         0,    insideZ + offsetBottom], norm: [ 0, 0,-1], uv: [0,0], },
     ];
     var positions = [];
     var normals = [];
